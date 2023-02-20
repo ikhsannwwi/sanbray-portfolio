@@ -19,7 +19,7 @@
                         <div class="text">
                             <span class="subheading">Hallo! Saya Mochammad Ikhsan Nawawi</span>
                             <h1 class="mb-4 mt-3">Creative <span>UI/UX</span> Designer &amp; Web Developer</h1>
-                            <p><a href="#" class="btn btn-primary">Hire me</a> <a href="/download" class="btn btn-primary btn-outline-primary">Download CV</a></p>
+                            <p><a href="#about-section" class="btn btn-primary">Hire me</a> <a href="/download" class="btn btn-primary btn-outline-primary">Download CV</a></p>
                         </div>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                         <div class="text">
                             <span class="subheading">We Design &amp; Build Brands</span>
                             <h1 class="mb-4 mt-3">Hi, Saya <span>Ikhsan</span> Ini Portfolio Saya.</h1>
-                            <p><a href="#" class="btn btn-primary">Hire me</a> <a href="#" class="btn btn-primary btn-outline-primary">Download CV</a></p>
+                            <p><a href="#about-section" class="btn btn-primary">Hire me</a> <a href="#" class="btn btn-primary btn-outline-primary">Download CV</a></p>
                         </div>
                     </div>
                 </div>
@@ -121,7 +121,7 @@
                                 <li class="d-flex"><span>Tanggal Lahir:</span> <span>Bandung, Juni 21, 2005</span></li>
                                 <li class="d-flex"><span>Alamat:</span> <span>Kp Babakan Kalapa Desa Pataruman Kec Tarogong Kidul Garut Jawabarat</span></li>
                                 <li class="d-flex"><span>Kode Pos:</span> <span>44151</span></li>
-                                <li class="d-flex"><span>Email:</span> <span>mochammadikhsannawawi@gmail.com</span></li>
+                                <li class="d-flex"><span>Email:</span> <span>ikhsannawawix@gmail.com</span></li>
                                 <li class="d-flex"><span>Nomor Telepon: </span> <span>+62-877-9888-9924</span></li>
                             </ul>
                         </div>
@@ -778,7 +778,7 @@
                             <span class="fa fa-paper-plane"></span>
                         </div>
                         <div class="text">
-                            <p><span>Email:</span> <a href="mailto:mochammadikhsannawawi@gmail.com">mochammadikhsannawawi@gmail</a></p>
+                            <p><span>Email:</span> <a href="mailto:ikhsannawawix@gmail.com">ikhsannawawix@gmail.com</a></p>
                         </div>
                     </div>
                     <div class="dbox w-100 d-flex">

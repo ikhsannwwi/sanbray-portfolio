@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\banner;
 use Illuminate\Http\Request;
 
 class viewController extends Controller
@@ -11,7 +12,8 @@ class viewController extends Controller
         return view('admin.data.dashboard');
     }
     public function banner(){
-        return view('admin.data.banner');
+        $data = banner::orderBy('created_at','DESC')->get();
+        return view('admin.data.banner', compact('data'));
     }
     public function blog(){
         return view('admin.data.blog');

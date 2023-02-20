@@ -23,6 +23,8 @@
 
 	{{-- sweetalert CSS --}}
 	<link href="{{asset("sweetalert2/dist/sweetalert2.css")}}" rel="stylesheet">
+
+	@yield('css')
 </head>
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 	
@@ -55,7 +57,7 @@
 			<div class="row mb-5">
 				<div class="col-md">
 					<div class="ftco-footer-widget mb-4">
-						<h2 class="ftco-heading-2">Lets talk about</h2>
+						<h2 class="ftco-heading-2">Mochammad Ikhsan Nawawi</h2>
 						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
 						<p><a href="#" class="btn btn-primary">Learn more</a></p>
 					</div>
@@ -64,23 +66,23 @@
 					<div class="ftco-footer-widget mb-4 ml-md-4">
 						<h2 class="ftco-heading-2">Links</h2>
 						<ul class="list-unstyled">
-							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Home</a></li>
-							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>About</a></li>
-							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Services</a></li>
-							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Projects</a></li>
-							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact</a></li>
+							<li><a href="#home-section"><span class="fa fa-chevron-right mr-2"></span>Home</a></li>
+							<li><a href="#about-section"><span class="fa fa-chevron-right mr-2"></span>About</a></li>
+							<li><a href="#services-section"><span class="fa fa-chevron-right mr-2"></span>Services</a></li>
+							<li><a href="#projects-section"><span class="fa fa-chevron-right mr-2"></span>Projects</a></li>
+							<li><a href="#contact-section"><span class="fa fa-chevron-right mr-2"></span>Contact</a></li>
 						</ul>
 					</div>
 				</div>
 				<div class="col-md">
 					<div class="ftco-footer-widget mb-4">
-						<h2 class="ftco-heading-2">Services</h2>
+						<h2 class="ftco-heading-2">Website Saya</h2>
 						<ul class="list-unstyled">
 							<li><a href="http://sanbray.epizy.com" target="_blank"><span class="fa fa-chevron-right mr-2"></span>Sanbray Company</a></li>
 							<li><a href="http://eskull.smkn.itzbenz.online" target="_blank"><span class="fa fa-chevron-right mr-2"></span>Website Ekstrakulikuler SMK Negeri 1 Garut</a></li>
-							<li><a href="#" target="_blank"><span class="fa fa-chevron-right mr-2"></span>Business Strategy</a></li>
-							<li><a href="#" target="_blank"><span class="fa fa-chevron-right mr-2"></span>Data Analysis</a></li>
-							<li><a href="#" target="_blank"><span class="fa fa-chevron-right mr-2"></span>Graphic Design</a></li>
+							<li><a href="http://ikhsannawawi.epizy.com" target="_blank"><span class="fa fa-chevron-right mr-2"></span>Mochammad Ikhsan Nawawi</a></li>
+							<li><a href="http://desasmea.epizy.com" target="_blank"><span class="fa fa-chevron-right mr-2"></span>DesaSmea</a></li>
+							<li><a href="http://lowongankerja.epizy.com" target="_blank"><span class="fa fa-chevron-right mr-2"></span>Lowongan Kerja</a></li>
 						</ul>
 					</div>
 				</div>
@@ -91,7 +93,7 @@
 							<ul>
 								<li><span class="icon fa fa-map marker"></span><span class="text">Kp Babakan Kalapa 715 Desa Pataruman, Kec Tarogong Kidul, Garut, Jawabarat</span></li>
 								<li><a href="https://wa.me/6287798889924" target="_blank"><span class="icon fa fa-phone"></span><span class="text">+62 877 9888 9924</span></a></li>
-								<li><a href="mail:mochammadikhsannawawi@gmail.com"><span class="icon fa fa-paper-plane pr-4"></span><span class="text">mochammadikhsannawawi@gmail.com</span></a></li>
+								<li><a href="mailto:ikhsannawawix@gmail.com"><span class="icon fa fa-paper-plane pr-4"></span><span class="text">ikhsannawawix@gmail.com</span></a></li>
 							</ul>
 						</div>
 						<ul class="ftco-footer-social list-unstyled mt-2">
@@ -141,6 +143,8 @@
 
 		{{-- sweetalert JS --}}
 		<script src="{{asset("sweetalert2/dist/sweetalert2.min.js")}}"></script>
+
+		@yield('js')
 
 		@stack('script')
 		

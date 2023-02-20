@@ -17,6 +17,9 @@
 <link rel="stylesheet" href="{{asset('admin/extensions/datatables.net-bs5/css/dataTables.bootstrap5.min.css')}}">
 <link rel="stylesheet" href="{{asset('admin/css/pages/datatables.css')}}">
 
+{{-- fontawesome --}}
+<link rel="stylesheet" href="{{asset('admin/extensions/@fortawesome/fontawesome-free/css/all.min.css')}}">
+
 {{-- toastr CSS --}}
 <link href="{{asset('toastr/build/toastr.min.css')}}" rel="stylesheet"/>
 
@@ -141,11 +144,12 @@
 {{-- sweetalert JS --}}
 <script src="{{asset("sweetalert2/dist/sweetalert2.min.js")}}"></script>
 
-@stack('script')
  
 <script src="{{asset('admin/extensions/jquery/jquery.min.js')}}"></script>
 <script src="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.js"></script>
 <script src="{{asset('admin/js/pages/datatables.js')}}"></script>
+
+@stack('script')
 </body>
 
 </html>
