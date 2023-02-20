@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\bannerController;
 use App\Http\Controllers\landingController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +21,5 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [landingController::class, 'index'])->name('index');
+
+Route::get('/download', [bannerController::class, 'cvDownload']);

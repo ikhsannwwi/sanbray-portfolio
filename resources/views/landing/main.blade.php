@@ -1,7 +1,7 @@
 @extends('landing.layouts.header')
 
 @section('title')
-    home -
+    Home
 @endsection
 
 @section('content')
@@ -19,7 +19,7 @@
                         <div class="text">
                             <span class="subheading">Hallo! Saya Mochammad Ikhsan Nawawi</span>
                             <h1 class="mb-4 mt-3">Creative <span>UI/UX</span> Designer &amp; Web Developer</h1>
-                            <p><a href="#" class="btn btn-primary">Hire me</a> <a href="#" class="btn btn-primary btn-outline-primary">Download CV</a></p>
+                            <p><a href="#" class="btn btn-primary">Hire me</a> <a href="/download" class="btn btn-primary btn-outline-primary">Download CV</a></p>
                         </div>
                     </div>
                 </div>
@@ -762,7 +762,7 @@
                             <span class="fa fa-map-marker"></span>
                         </div>
                         <div class="text">
-                            <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
+                            <p><span>Address:</span> Kp Babakan Kalapa 715 Desa Pataruman, Kec Tarogong Kidul, Garut, Jawabarat</p>
                         </div>
                     </div>
                     <div class="dbox w-100 d-flex">
@@ -770,7 +770,7 @@
                             <span class="fa fa-phone"></span>
                         </div>
                         <div class="text">
-                            <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+                            <p><span>Phone:</span> <a href="https://wa.me/6287798889924">+62 877 9888 9924</a></p>
                         </div>
                     </div>
                     <div class="dbox w-100 d-flex">
@@ -778,7 +778,7 @@
                             <span class="fa fa-paper-plane"></span>
                         </div>
                         <div class="text">
-                            <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+                            <p><span>Email:</span> <a href="mailto:mochammadikhsannawawi@gmail.com">mochammadikhsannawawi@gmail</a></p>
                         </div>
                     </div>
                     <div class="dbox w-100 d-flex">
@@ -786,7 +786,7 @@
                             <span class="fa fa-globe"></span>
                         </div>
                         <div class="text">
-                            <p><span>Website</span> <a href="#">yoursite.com</a></p>
+                            <p><span>Website</span> <a href="http://ikhsannawawi.epizy.com">ikhsannawawi.epizy.com</a></p>
                         </div>
                     </div>
                 </div>
@@ -795,4 +795,55 @@
         </div>
     </div>
 </section>
+
+
+
+@push('script')
+@if (session()->has('success'))
+<script>
+    toastr.options = {
+    "closeButton": true,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": true,
+    "rtl": false,
+    "positionClass": "toast-top-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": 300,
+    "hideDuration": 1000,
+    "timeOut": 5000,
+    "extendedTimeOut": 1000,
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  };
+      toastr["success"]("{{ Session::get('success') }}")
+      </script>
+    @endif
+    @if (session()->has('error'))
+    <script>
+    toastr.options = {
+    "closeButton": true,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": true,
+    "rtl": false,
+    "positionClass": "toast-top-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": 300,
+    "hideDuration": 1000,
+    "timeOut": 5000,
+    "extendedTimeOut": 1000,
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  };
+      toastr["error"]("{{ Session::get('error') }}")
+    </script>
+    @endif
+@endpush
 @endsection

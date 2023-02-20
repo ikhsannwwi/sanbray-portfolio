@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>@yield('title') Mochammad Ikhsan Nawawi</title>
+	<title>@yield('title') - Mochammad Ikhsan Nawawi</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	
@@ -17,13 +17,19 @@
 	
 	<link rel="stylesheet" href="{{asset('sanbray/css/flaticon.css')}}">
 	<link rel="stylesheet" href="{{asset('sanbray/css/style.css')}}">
+
+	{{-- toastr CSS --}}
+	<link href="{{asset('toastr/build/toastr.min.css')}}" rel="stylesheet"/>
+
+	{{-- sweetalert CSS --}}
+	<link href="{{asset("sweetalert2/dist/sweetalert2.css")}}" rel="stylesheet">
 </head>
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 	
 	
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target" id="ftco-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="index.html">Ikhsannawawi<span>.</span></a>
+			<a class="navbar-brand" href="/">Ikhsannawawi<span>.</span></a>
 			<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
 			</button>
@@ -112,6 +118,7 @@
 		<!-- loader -->
 		<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
+		<script src="{{asset("jquery/dist/jquery.js")}}" ></script>
 
 		<script src="{{asset('sanbray/js/jquery.min.js')}}"></script>
 		<script src="{{asset('sanbray/js/jquery-migrate-3.0.1.min.js')}}"></script>
@@ -128,6 +135,14 @@
 		<script src="{{asset('sanbray/js/google-map.js')}}"></script>
 		
 		<script src="{{asset('sanbray/js/main.js')}}"></script>
+
+		{{-- toastr JS --}}
+		<script src="{{asset('toastr/build/toastr.min.js')}}"></script>
+
+		{{-- sweetalert JS --}}
+		<script src="{{asset("sweetalert2/dist/sweetalert2.min.js")}}"></script>
+
+		@stack('script')
 		
 	</body>
 	</html>
