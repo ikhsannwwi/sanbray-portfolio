@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\bannerController;
+use App\Http\Controllers\admin\gallery_projectController;
 use App\Http\Controllers\admin\viewController;
 use App\Http\Controllers\landingController;
 use Illuminate\Support\Facades\Route;
@@ -36,5 +37,15 @@ Route::post('/admin/banner/insert-banner', [bannerController::class, 'insert_ban
 Route::get('/admin/banner/edit-banner/{id}', [bannerController::class, 'edit_banner'])->name('edit_banner');
 Route::post('/admin/banner/update-banner/{id}', [bannerController::class, 'update_banner'])->name('update_banner');
 Route::get('/admin/banner/delete-banner/{id}', [bannerController::class, 'delete_banner'])->name('delete_banner');
-
 // -------------------- End Banner ----------------------- //
+
+
+
+
+// -------------------- Start Gallery Project ----------------------- //
+Route::get('/admin/gallery-project/add-gallery-project', [gallery_projectController::class, 'add_gallery_project'])->name('add_gallery_project');
+Route::post('/admin/gallery-project/insert-gallery-project', [gallery_projectController::class, 'insert_gallery_project'])->name('insert_gallery_project');
+Route::get('/admin/gallery-project/edit-gallery-project/{id}', [gallery_projectController::class, 'edit_gallery_project'])->name('edit_gallery_project');
+Route::post('/admin/gallery-project/update-gallery-project/{id}', [gallery_projectController::class, 'update_gallery_project'])->name('update_gallery_project');
+Route::get('/admin/gallery-project/delete-gallery-project/{id}', [gallery_projectController::class, 'delete_gallery_project'])->name('delete_gallery_project');
+// -------------------- End Gallery Project ----------------------- //

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\banner;
+use App\Models\gallery_project;
 use Illuminate\Http\Request;
 
 class viewController extends Controller
@@ -19,7 +20,8 @@ class viewController extends Controller
         return view('admin.data.blog');
     }
     public function gallery_project(){
-        return view('admin.data.gallery-project');
+        $data = gallery_project::orderBy('created_at','DESC')->get();
+        return view('admin.data.gallery-project',compact('data'));
     }
     public function testimoni(){
         return view('admin.data.testimoni');
