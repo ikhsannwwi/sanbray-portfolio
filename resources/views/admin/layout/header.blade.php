@@ -13,6 +13,10 @@
     
 <link rel="stylesheet" href="{{asset('admin/css/shared/iconly.css')}}">
 
+{{-- Datatable --}}
+<link rel="stylesheet" href="{{asset('admin/extensions/datatables.net-bs5/css/dataTables.bootstrap5.min.css')}}">
+<link rel="stylesheet" href="{{asset('admin/css/pages/datatables.css')}}">
+
 {{-- toastr CSS --}}
 <link href="{{asset('toastr/build/toastr.min.css')}}" rel="stylesheet"/>
 
@@ -28,7 +32,7 @@
     <div class="sidebar-header position-relative">
         <div class="d-flex justify-content-between align-items-center">
             <div class="logo">
-                <a href="index.html"><img src="{{asset('admin/images/logo/logo.svg')}}" alt="Logo" srcset=""></a>
+                <a href="/"><span class="fs-2 fw-2">ikhsan</span></a>
             </div>
             <div class="theme-toggle d-flex gap-2  align-items-center mt-2">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--system-uicons" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 14.5c2.219 0 4-1.763 4-3.982a4.003 4.003 0 0 0-4-4.018c-2.219 0-4 1.781-4 4c0 2.219 1.781 4 4 4zM4.136 4.136L5.55 5.55m9.9 9.9l1.414 1.414M1.5 10.5h2m14 0h2M4.135 16.863L5.55 15.45m9.899-9.9l1.414-1.415M10.5 19.5v-2m0-14v-2" opacity=".3"></path><g transform="translate(-210 -1)"><path d="M220.5 2.5v2m6.5.5l-1.5 1.5"></path><circle cx="220.5" cy="11.5" r="4"></circle><path d="m214 5l1.5 1.5m5 14v-2m6.5-.5l-1.5-1.5M214 18l1.5-1.5m-4-5h2m14 0h2"></path></g></g></svg>
@@ -48,8 +52,8 @@
             <li class="sidebar-title">Menu</li>
             
             <li
-                class="sidebar-item active ">
-                <a href="index.html" class='sidebar-link'>
+                class="sidebar-item {{request()->is('administrator') ? 'active' : ''}} ">
+                <a href="/administrator" class='sidebar-link'>
                     <i class="bi bi-grid-fill"></i>
                     <span>Dashboard</span>
                 </a>
@@ -60,26 +64,34 @@
             <li class="sidebar-title">Raise Support</li>
             
             <li
-                class="sidebar-item  ">
-                <a href="https://zuramai.github.io/mazer/docs" class='sidebar-link'>
+                class="sidebar-item  {{request()->is('admin/banner') ? 'active' : ''}}">
+                <a href="/admin/banner" class='sidebar-link'>
                     <i class="bi bi-life-preserver"></i>
-                    <span>Documentation</span>
+                    <span>Banner</span>
+                </a>
+            </li>
+
+            <li
+                class="sidebar-item  {{request()->is('admin/gallery-project') ? 'active' : ''}}">
+                <a href="/admin/gallery-project" class='sidebar-link'>
+                    <i class="bi bi-life-preserver"></i>
+                    <span>Gallery Project</span>
                 </a>
             </li>
             
             <li
-                class="sidebar-item  ">
-                <a href="https://github.com/zuramai/mazer/blob/main/CONTRIBUTING.md" class='sidebar-link'>
+                class="sidebar-item  {{request()->is('admin/blog') ? 'active' : ''}}">
+                <a href="/admin/blog" class='sidebar-link'>
                     <i class="bi bi-puzzle"></i>
-                    <span>Contribute</span>
+                    <span>Blog</span>
                 </a>
             </li>
             
             <li
-                class="sidebar-item  ">
-                <a href="https://github.com/zuramai/mazer#donation" class='sidebar-link'>
+                class="sidebar-item  {{request()->is('admin/testimoni') ? 'active' : ''}}">
+                <a href="/admin/testimoni" class='sidebar-link'>
                     <i class="bi bi-cash"></i>
-                    <span>Donate</span>
+                    <span>Testimonies</span>
                 </a>
             </li>
             
@@ -104,11 +116,11 @@
             <footer>
                 <div class="footer clearfix mb-0 text-muted">
                     <div class="float-start">
-                        <p>2021 &copy; Mazer</p>
+                        <p>2023 - {{date('Y')}} &copy; Mochammad Ikhsan Nawawi</p>
                     </div>
                     <div class="float-end">
                         <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
-                                href="https://saugi.me">Saugi</a></p>
+                                href="http://ikhsannawawi.epizy.com">Mochammad Ikhsan Nawawi</a></p>
                     </div>
                 </div>
             </footer>
@@ -131,6 +143,9 @@
 
 @stack('script')
  
+<script src="{{asset('admin/extensions/jquery/jquery.min.js')}}"></script>
+<script src="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.js"></script>
+<script src="{{asset('admin/js/pages/datatables.js')}}"></script>
 </body>
 
 </html>

@@ -24,3 +24,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [landingController::class, 'index'])->name('index');
 
 Route::get('/administrator', [viewController::class, 'administrator'])->name('administrator');
+Route::get('/admin/banner', [viewController::class, 'banner'])->name('banner');
+Route::get('/admin/gallery-project', [viewController::class, 'gallery_project'])->name('gallery_project');
+Route::get('/admin/blog', [viewController::class, 'blog'])->name('blog');
+Route::get('/admin/testimoni', [viewController::class, 'testimoni'])->name('testimoni');
