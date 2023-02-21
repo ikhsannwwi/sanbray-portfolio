@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\admin\bannerController;
+use App\Http\Controllers\admin\category_blogController;
+use App\Http\Controllers\admin\category_projectController;
 use App\Http\Controllers\admin\gallery_projectController;
 use App\Http\Controllers\admin\viewController;
 use App\Http\Controllers\landingController;
@@ -27,7 +29,9 @@ Route::get('/', [landingController::class, 'index'])->name('index');
 Route::get('/administrator', [viewController::class, 'administrator'])->name('administrator');
 Route::get('/admin/banner', [viewController::class, 'banner'])->name('banner');
 Route::get('/admin/gallery-project', [viewController::class, 'gallery_project'])->name('gallery_project');
+Route::get('/admin/category-project', [viewController::class, 'category_project'])->name('category_project');
 Route::get('/admin/blog', [viewController::class, 'blog'])->name('blog');
+Route::get('/admin/category-blog', [viewController::class, 'category_blog'])->name('category_blog');
 Route::get('/admin/testimoni', [viewController::class, 'testimoni'])->name('testimoni');
 
 
@@ -49,3 +53,25 @@ Route::get('/admin/gallery-project/edit-gallery-project/{id}', [gallery_projectC
 Route::post('/admin/gallery-project/update-gallery-project/{id}', [gallery_projectController::class, 'update_gallery_project'])->name('update_gallery_project');
 Route::get('/admin/gallery-project/delete-gallery-project/{id}', [gallery_projectController::class, 'delete_gallery_project'])->name('delete_gallery_project');
 // -------------------- End Gallery Project ----------------------- //
+
+
+
+
+// -------------------- Start Category Project ----------------------- //
+Route::get('/admin/category-project/add-category-project', [category_projectController::class, 'add_category_project'])->name('add_category_project');
+Route::post('/admin/category-project/insert-category-project', [category_projectController::class, 'insert_category_project'])->name('insert_category_project');
+Route::get('/admin/category-project/edit-category-project/{id}', [category_projectController::class, 'edit_category_project'])->name('edit_category_project');
+Route::post('/admin/category-project/update-category-project/{id}', [category_projectController::class, 'update_category_project'])->name('update_category_project');
+Route::get('/admin/category-project/delete-category-project/{id}', [category_projectController::class, 'delete_category_project'])->name('delete_category_project');
+// -------------------- End Category Project ----------------------- //
+
+
+
+
+// -------------------- Start Category Project ----------------------- //
+Route::get('/admin/category-blog/add-category-blog', [category_blogController::class, 'add_category_blog'])->name('add_category_blog');
+Route::post('/admin/category-blog/insert-category-blog', [category_blogController::class, 'insert_category_blog'])->name('insert_category_blog');
+Route::get('/admin/category-blog/edit-category-blog/{id}', [category_blogController::class, 'edit_category_blog'])->name('edit_category_blog');
+Route::post('/admin/category-blog/update-category-blog/{id}', [category_blogController::class, 'update_category_blog'])->name('update_category_blog');
+Route::get('/admin/category-blog/delete-category-blog/{id}', [category_blogController::class, 'delete_category_blog'])->name('delete_category_blog');
+// -------------------- End Category Project ----------------------- //

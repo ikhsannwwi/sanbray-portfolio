@@ -78,36 +78,105 @@
             <li class="sidebar-title">Raise Support</li>
             
             <li
-                class="sidebar-item  {{request()->is('admin/banner') ? 'active' : ''}}">
+                class="sidebar-item  {{request()->is(
+                    'admin/banner',
+                    'admin/banner/add-banner',
+                    'admin/banner/edit-banner/{id}',
+                ) ? 'active' : ''}}">
                 <a href="/admin/banner" class='sidebar-link'>
                     <i class="bi bi-life-preserver"></i>
                     <span>Banner</span>
                 </a>
             </li>
 
+            
+
             <li
-                class="sidebar-item  {{request()->is('admin/gallery-project') ? 'active' : ''}}">
-                <a href="/admin/gallery-project" class='sidebar-link'>
-                    <i class="bi bi-life-preserver"></i>
-                    <span>Gallery Project</span>
+                class="sidebar-item  has-sub {{request()->is(
+                'admin/gallery-project',
+                'admin/gallery-project/add-gallery-project',
+                'admin/gallery-project/edit-gallery-project/{id}',
+
+                'admin/category-project',
+                'admin/category-project/add-category-project',
+                'admin/category-project/edit-category-project/{id}',
+                ) ? 'active' : ''}}">
+                <a href="#" class='sidebar-link'>
+                    <i class="bi bi-grid-1x2-fill"></i>
+                    <span>Project</span>
                 </a>
+                <ul class="submenu ">
+                    <li class="submenu-item {{request()->is('admin/gallery-project',
+                    'admin/gallery-project/add-gallery-project',
+                    'admin/gallery-project/edit-gallery-project/{id}',
+                    ) ? 'active' : ''}}">
+                        <a href="/admin/gallery-project">Gallery Project</a>
+                    </li>
+                    <li class="submenu-item {{request()->is('admin/category-project',
+                    'admin/category-project/add-category-project',
+                    'admin/category-project/edit-category-project/{id}',
+                    ) ? 'active' : ''}}">
+                        <a href="/admin/category-project">Category Project</a>
+                    </li>
+                </ul>
             </li>
             
             <li
-                class="sidebar-item  {{request()->is('admin/blog') ? 'active' : ''}}">
-                <a href="/admin/blog" class='sidebar-link'>
-                    <i class="bi bi-puzzle"></i>
+                class="sidebar-item  has-sub {{request()->is(
+                'admin/blog',
+                'admin/blog/add-blog',
+                'admin/blog/edit-blog/{id}',
+
+                'admin/category-blog',
+                'admin/category-blog/add-category-blog',
+                'admin/category-blog/edit-category-blog/{id}',
+                ) ? 'active' : ''}}">
+                <a href="#" class='sidebar-link'>
+                    <i class="bi bi-grid-1x2-fill"></i>
                     <span>Blog</span>
                 </a>
+                <ul class="submenu ">
+                    <li class="submenu-item {{request()->is('admin/blog',
+                    'admin/blog/add-blog',
+                    'admin/blog/edit-blog/{id}',
+                    ) ? 'active' : ''}}">
+                        <a href="/admin/blog">Blog</a>
+                    </li>
+                    <li class="submenu-item {{request()->is('admin/category-blog',
+                    'admin/category-blog/add-category-blog',
+                    'admin/category-blog/edit-category-blog/{id}',
+                    ) ? 'active' : ''}}">
+                        <a href="/admin/category-blog">Category Blog</a>
+                    </li>
+                </ul>
             </li>
+
+            
             
             <li
-                class="sidebar-item  {{request()->is('admin/testimoni') ? 'active' : ''}}">
+                class="sidebar-item  {{request()->is(
+                    'admin/testimoni',
+                    'admin/testimoni/add-testimoni',
+                    'admin/testimoni/edit-testimoni/{id}',
+                ) ? 'active' : ''}}">
                 <a href="/admin/testimoni" class='sidebar-link'>
                     <i class="bi bi-cash"></i>
                     <span>Testimonies</span>
                 </a>
             </li>
+
+            <li
+                class="sidebar-item  {{request()->is(
+                    'admin/user',
+                    'admin/user/add-user',
+                    'admin/user/edit-user/{id}',
+                ) ? 'active' : ''}}">
+                <a href="/admin/user" class='sidebar-link'>
+                    <i class="bi bi-cash"></i>
+                    <span>User</span>
+                </a>
+            </li>
+            
             
         </ul>
     </div>

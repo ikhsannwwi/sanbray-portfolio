@@ -53,7 +53,9 @@
                                         <div class="form-group @error('category_project_id') is-invalid @enderror">
                                             <select name="category_project_id" id="formCategory" class="choices form-select ">
                                                 <option value="" selected>Open this select menu</option>
-                                                <option value="1">Web Developer</option>
+                                                @foreach ($data_category_project as $row)
+                                                <option value="{{$row->id}}">{{$row->category_project}}</option>
+                                                @endforeach
                                             </select>
                                             @error('category_project_id')
                                                     <span class="invalid-feedback d-block">{{$message}}</span>

@@ -65,7 +65,10 @@
                                         <label for="formCategory" class="form-label">Category Project</label>
                                         <div class="form-group @error('category_project_id') is-invalid @enderror">
                                             <select name="category_project_id" id="formCategory" class="choices form-select ">
-                                                <option value="{{$data->category_project_id}}"selected>Web Developer</option>
+                                                <option value="{{$data->category_project_id}}"selected>{{$data->category_project->category_project}}</option>
+                                                @foreach ($data_category_project as $row)
+                                                <option value="{{$row->id}}">{{$row->category_project}}</option>
+                                                @endforeach
                                             </select>
                                             @error('category_project_id')
                                                     <span class="invalid-feedback d-block">{{$message}}</span>

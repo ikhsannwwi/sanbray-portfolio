@@ -41,7 +41,7 @@
                             <td>{{$row->nama_project}}</td>
                             <td>{{$row->deskripsi}}</td>
                             <td><a href="{{$row->url}}">{{$row->url}}</a></td>
-                            <td>{{$row->category_project_id}}</td>
+                            <td>{{$row->category_project->category_project}}</td>
                             <td><img width="100px" src="{{asset('images/gallery-project/'.$row->foto)}}" alt="{{$row->foto}}"></td>
                         </tr>
                         @endforeach

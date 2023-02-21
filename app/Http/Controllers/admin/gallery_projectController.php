@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\category_project;
 use App\Models\gallery_project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -13,8 +14,9 @@ class gallery_projectController extends Controller
     public function add_gallery_project()
     {
         $data = gallery_project::all();
+        $data_category_project = category_project::all();
 
-        return view('admin.add.add-gallery-project',compact('data'));
+        return view('admin.add.add-gallery-project',compact('data','data_category_project'));
     }
     public function insert_gallery_project(Request $request){
         $request->validate([
@@ -39,7 +41,9 @@ class gallery_projectController extends Controller
     {
         $data = gallery_project::find($id);
 
-        return view('admin.edit.edit-gallery-project' ,compact('data'));
+        $data_category_project = category_project::all();
+
+        return view('admin.edit.edit-gallery-project' ,compact('data','data_category_project'));
     }
 
     public function update_gallery_project(Request $request, $id){
