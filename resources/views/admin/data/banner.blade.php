@@ -19,8 +19,8 @@
                 </div>
                 
             </div>
-            <div class="card-body">
-                <table class="table" id="table1">
+            <div class="card-body ">
+                <table class="table " id="table1">
                     <thead>
                         <tr>
                             <th>No</th>

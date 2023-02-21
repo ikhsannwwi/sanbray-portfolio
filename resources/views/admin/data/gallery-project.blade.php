@@ -1,7 +1,7 @@
 @extends('admin.layout.header')
 
 @section('title')
-    Banner - ikhsannawawi Admin
+    Gallery Project - ikhsannawawi Admin
 @endsection
 
 @section('content')
@@ -11,10 +11,10 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col-11">
-                        Data Banner
+                        Data Gallery Project
                     </div>
                     <div class="col-1">
-                        <a href="/admin/banner/add-banner"><i class="bi bi-cloud-plus-fill fs-4"></i></a>
+                        <a href="/admin/gallery-project/add-gallery-project"><i class="bi bi-cloud-plus-fill fs-4"></i></a>
                     </div>
                 </div>
                 
@@ -35,7 +35,7 @@
                         @endphp
                         @foreach ($data as $row)
                         <tr>
-                            <td><a class="text-primary" href="/admin/banner/edit-banner/{{$row->id}}">{{$no++}}</a></td>
+                            <td><a class="text-primary" href="/admin/gallery-project/edit-gallery-project/{{$row->id}}">{{$no++}}</a></td>
                             <td>{{$row->nama_project}}</td>
                             <td>{{$row->deskripsi}}</td>
                             <td><a href="{{$row->url}}">{{$row->url}}</a></td>
