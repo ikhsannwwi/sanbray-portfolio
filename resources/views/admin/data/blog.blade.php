@@ -43,7 +43,7 @@
                             <td><a class="text-primary" href="/admin/blog/edit-blog/{{$row->id}}">{{$no++}}</a></td>
                             <td>{{$row->title_blog}}</td>
                             <td>{{$row->tanggal}}</td>
-                            <td>{{$row->sub_body_blog}}</td>
+                            <td>{{Str::limit($row->body_blog, 15)}}</td>
                             <td>{{$row->body_blog}}</td>
                             <td>{{$row->category_blog->category_blog}}</td>
                             <td>{{$row->slug}}</td>

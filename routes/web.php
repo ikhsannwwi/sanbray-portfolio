@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\bannerController;
+use App\Http\Controllers\admin\blogController;
 use App\Http\Controllers\admin\category_blogController;
 use App\Http\Controllers\admin\category_projectController;
 use App\Http\Controllers\admin\gallery_projectController;
@@ -74,4 +75,15 @@ Route::post('/admin/category-blog/insert-category-blog', [category_blogControlle
 Route::get('/admin/category-blog/edit-category-blog/{id}', [category_blogController::class, 'edit_category_blog'])->name('edit_category_blog');
 Route::post('/admin/category-blog/update-category-blog/{id}', [category_blogController::class, 'update_category_blog'])->name('update_category_blog');
 Route::get('/admin/category-blog/delete-category-blog/{id}', [category_blogController::class, 'delete_category_blog'])->name('delete_category_blog');
+// -------------------- End Category Project ----------------------- //
+
+
+
+
+// -------------------- Start Category Project ----------------------- //
+Route::get('/admin/blog/add-blog', [blogController::class, 'add_blog'])->name('add_blog');
+Route::post('/admin/blog/insert-blog', [blogController::class, 'insert_blog'])->name('insert_blog');
+Route::get('/admin/blog/edit-blog/{id}', [blogController::class, 'edit_blog'])->name('edit_blog');
+Route::post('/admin/blog/update-blog/{id}', [blogController::class, 'update_blog'])->name('update_blog');
+Route::get('/admin/blog/delete-blog/{id}', [blogController::class, 'delete_blog'])->name('delete_blog');
 // -------------------- End Category Project ----------------------- //
