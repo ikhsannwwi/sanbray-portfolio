@@ -24,8 +24,10 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Title</th>
-                            <th>Body</th>
+                            <th>Nama Project</th>
+                            <th>Deskripsi</th>
+                            <th>URL Project</th>
+                            <th>Category Project</th>
                             <th>Foto</th>
                         </tr>
                     </thead>
@@ -39,6 +41,7 @@
                             <td>{{$row->nama_project}}</td>
                             <td>{{$row->deskripsi}}</td>
                             <td><a href="{{$row->url}}">{{$row->url}}</a></td>
+                            <td>{{$row->category_project_id}}</td>
                             <td><img width="100px" src="{{asset('images/gallery-project/'.$row->foto)}}" alt="{{$row->foto}}"></td>
                         </tr>
                         @endforeach

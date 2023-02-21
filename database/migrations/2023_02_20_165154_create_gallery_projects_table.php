@@ -17,6 +17,7 @@ class CreateGalleryProjectsTable extends Migration
             $table->id();
             $table->string('nama_project');
             $table->text('deskripsi');
+            $table->foreignId('category_project_id');
             $table->string('url');
             $table->string('foto');
             $table->timestamps();

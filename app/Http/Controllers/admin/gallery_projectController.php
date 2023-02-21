@@ -14,7 +14,7 @@ class gallery_projectController extends Controller
     {
         $data = gallery_project::all();
 
-        return view('admin.add.add-gallery_project',compact('data'));
+        return view('admin.add.add-gallery-project',compact('data'));
     }
     public function insert_gallery_project(Request $request){
         $request->validate([
@@ -22,6 +22,7 @@ class gallery_projectController extends Controller
             'deskripsi' => 'required',
             'url' => 'required',
             'foto' => 'required',
+            'category_project_id' => 'required',
         ]);
         $data = gallery_project::create($request->all());
 
@@ -38,7 +39,7 @@ class gallery_projectController extends Controller
     {
         $data = gallery_project::find($id);
 
-        return view('admin.edit.edit-gallery_project' ,compact('data'));
+        return view('admin.edit.edit-gallery-project' ,compact('data'));
     }
 
     public function update_gallery_project(Request $request, $id){

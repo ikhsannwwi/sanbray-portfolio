@@ -21,21 +21,30 @@
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <label for="first-name-column">Title</label>
-                                            <input type="text" id="first-name-column" class="form-control"
+                                            <input type="text" id="first-name-column" class="form-control @error('title_banner') is-invalid @enderror"
                                                 placeholder="Masukan Title Banner" name="title_banner">
+                                                @error('title_banner')
+                                                    <span class="invalid-feedback d-block">{{$message}}</span>
+                                                @enderror 
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <label for="last-name-column">Body</label>
-                                            <input type="text" id="last-name-column" class="form-control"
+                                            <input type="text" id="last-name-column" class="form-control @error('body_banner') is-invalid @enderror"
                                                 placeholder="Masukan Body Banner" name="body_banner">
+                                                @error('body_banner')
+                                                    <span class="invalid-feedback d-block">{{$message}}</span>
+                                                @enderror 
                                         </div>
                                     </div>
                                     <div class=" col-12">
                                         <div class="mb-3">
                                             <label for="formFile" class="form-label">Foto</label>
-                                            <input class="form-control" type="file" id="formFile" name="foto">
+                                            <input class="form-control @error('foto') is-invalid @enderror" type="file" id="formFile" name="foto">
+                                            @error('foto')
+                                                    <span class="invalid-feedback d-block">{{$message}}</span>
+                                                @enderror 
                                         </div>
                                     </div>
                                     

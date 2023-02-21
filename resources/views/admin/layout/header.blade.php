@@ -32,6 +32,11 @@
 {{-- sweetalert CSS --}}
 <link href="{{asset("sweetalert2/dist/sweetalert2.css")}}" rel="stylesheet">
 
+{{-- Choices CSS --}}
+<link rel="stylesheet" href="{{asset('admin/extensions/choices.js/public/assets/styles/choices.css')}}">
+
+@yield('css')
+
 </head>
 
 <body>
@@ -151,10 +156,16 @@
 <script src="{{asset("sweetalert2/dist/sweetalert2.min.js")}}"></script>
 
  
+{{-- DataTables JS --}}
 <script src="{{asset('admin/extensions/jquery/jquery.min.js')}}"></script>
 <script src="{{asset('admin/js/extensions/datatables.js')}}"></script>
 {{-- <script src="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.js"></script> --}}
 <script src="{{asset('admin/js/pages/datatables.js')}}"></script>
+
+{{-- Choices JS --}}
+<script src="{{asset('admin/extensions/choices.js/public/assets/scripts/choices.js')}}"></script>
+<script src="{{asset('admin/js/pages/form-element-select.js')}}"></script>
+@yield('js')
 
 @stack('script')
 </body>
