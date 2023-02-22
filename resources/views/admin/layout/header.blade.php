@@ -169,11 +169,17 @@
                 class="sidebar-item  {{request()->is(
                     'admin/user',
                     'admin/user/add-user',
-                    'admin/user/edit-user/{id}',
                 ) ? 'active' : ''}}">
                 <a href="/admin/user" class='sidebar-link'>
                     <i class="bi bi-cash"></i>
                     <span>User</span>
+                </a>
+            </li>
+            <li
+                class="sidebar-item">
+                <a href="/admin/logout" class='sidebar-link'>
+                    <i class="bi bi-cash"></i>
+                    <span>Logout</span>
                 </a>
             </li>
             

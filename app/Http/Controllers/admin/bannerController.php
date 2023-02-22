@@ -55,9 +55,6 @@ class bannerController extends Controller
         }
         $data->update($request->all());
         if ($request->hasFile('foto')) {
-            if (File_exists(public_path('images/banner/' . $data->foto))) { //either you can use file path instead of $data->image
-                unlink(public_path('images/banner/' . $data->foto)); //here you can also use path like as ('uploads/media/welcome/'. $data->image)
-            }
             $filename = Str::random(8). '.' . $request->file('foto')->extension();
             $request->file('foto')->move('images/banner', $filename);
             $data->foto = $filename;

@@ -1,7 +1,7 @@
 @extends('admin.layout.header')
 
 @section('title')
-    Category Project - ikhsannawawi Admin
+    Category Project 
 @endsection
 
 @section('content')

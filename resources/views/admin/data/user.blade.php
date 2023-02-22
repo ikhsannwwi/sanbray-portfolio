@@ -1,7 +1,7 @@
 @extends('admin.layout.header')
 
 @section('title')
-    Category Blog 
+    User 
 @endsection
 
 @section('content')
@@ -11,27 +11,36 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col-11">
-                        Data Category Blog
+                        Data User
                     </div>
                     <div class="col-1">
-                        <a href="/admin/category-blog/add-category-blog"><i class="bi bi-cloud-plus-fill fs-4"></i></a>
+                        <a href="/admin/user/add-user"><i class="bi bi-cloud-plus-fill fs-4"></i></a>
                     </div>
                 </div>
                 
             </div>
-            <div class="card-body">
-                <table class="table" id="table1">
+            <div class="card-body ">
+                <table class="table " id="table1">
                     <thead>
                         <tr>
-                            <th>Id</th>
-                            <th>Category Blog</th>
+                            <th>No</th>
+                            <th>Foto</th>
+                            <th>Nama</th>
+                            <th>Email</th>
+                            <th>Password</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @php
+                            $no = 1;
+                        @endphp
                         @foreach ($data as $row)
                         <tr>
-                            <td><a class="text-primary" href="/admin/category-blog/edit-category-blog/{{$row->id}}">{{$row->id}}</a></td>
-                            <td>{{$row->category_blog}}</td>
+                            <td><a class="text-primary" href="/admin/user/edit-user/{{$row->id}}">{{$no++}}</a></td>
+                            <td><img width="100px" src="{{asset('images/user/'.$row->foto)}}" alt="{{$row->foto}}"></td>
+                            <td>{{$row->name}}</td>
+                            <td>{{$row->email}}</td>
+                            <td>{{$row->password}}</td>
                         </tr>
                         @endforeach
                     </tbody>

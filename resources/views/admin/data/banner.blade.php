@@ -1,7 +1,7 @@
 @extends('admin.layout.header')
 
 @section('title')
-    Banner - ikhsannawawi Admin
+    Banner 
 @endsection
 
 @section('content')

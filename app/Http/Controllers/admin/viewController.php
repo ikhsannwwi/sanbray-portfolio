@@ -8,6 +8,7 @@ use App\Models\blog;
 use App\Models\category_blog;
 use App\Models\category_project;
 use App\Models\gallery_project;
+use App\Models\testimoni;
 use Illuminate\Http\Request;
 
 class viewController extends Controller
@@ -41,6 +42,8 @@ class viewController extends Controller
         return view('admin.data.category-project',compact('data'));
     }
     public function testimoni(){
-        return view('admin.data.testimoni');
+        $data = testimoni::orderBy('created_at', 'DESC')->get();
+
+        return view('admin.data.testimoni',compact('data'));
     }
 }

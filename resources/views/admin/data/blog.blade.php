@@ -1,7 +1,7 @@
 @extends('admin.layout.header')
 
 @section('title')
-    Blog - ikhsannawawi Admin
+    Blog 
 @endsection
 
 @section('content')
@@ -30,7 +30,6 @@
                             <th>Body</th>
                             <th>Category Blog</th>
                             <th>Slug</th>
-                            <th>Sub Foto</th>
                             <th>Foto</th>
                         </tr>
                     </thead>
@@ -42,12 +41,11 @@
                         <tr>
                             <td><a class="text-primary" href="/admin/blog/edit-blog/{{$row->id}}">{{$no++}}</a></td>
                             <td>{{$row->title_blog}}</td>
-                            <td>{{$row->tanggal}}</td>
+                            <td>{{\Carbon\Carbon::parse($row->tanggal)->format('d F Y')}}</td>
                             <td>{{Str::limit($row->body_blog, 15)}}</td>
                             <td>{{$row->body_blog}}</td>
                             <td>{{$row->category_blog->category_blog}}</td>
                             <td>{{$row->slug}}</td>
-                            <td><img width="100px" src="{{asset('images/blog/'.$row->sub_foto)}}" alt="{{$row->sub_foto}}"></td>
                             <td><img width="100px" src="{{asset('images/blog/'.$row->foto)}}" alt="{{$row->foto}}"></td>
                         </tr>
                         @endforeach

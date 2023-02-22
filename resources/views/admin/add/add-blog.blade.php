@@ -41,15 +41,6 @@
                                     </div>
                                     <div class=" col-md-6 col-12">
                                         <div class="mb-3">
-                                            <label for="formFile" class="form-label">Foto</label>
-                                            <input class="form-control @error('sub_foto') is-invalid @enderror" type="file" id="formFile" name="sub_foto">
-                                            @error('sub_foto')
-                                                    <span class="invalid-feedback d-block">{{$message}}</span>
-                                                @enderror 
-                                        </div>
-                                    </div>
-                                    <div class=" col-md-6 col-12">
-                                        <div class="mb-3">
                                             <label for="formFile" class="form-label">Tanggal</label>
                                             <input class="form-control @error('tanggal') is-invalid @enderror" type="date" id="formFile" name="tanggal">
                                             @error('tanggal')

@@ -8,6 +8,7 @@ use App\Models\category_blog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Intervention\Image\ImageManagerStatic ;
+use PHPUnit\Framework\Constraint\FileExists;
 
 class blogController extends Controller
 {
@@ -33,19 +34,11 @@ class blogController extends Controller
 
         if ($request->hasFile('foto')) {
             $filename = Str::random(8) . '.' . $request->file('foto')->extension();
-            $request->file('foto')->move('images/blog/foto',$filename);
+            $request->file('foto')->move('images/blog/',$filename);
             $data->foto = $filename;
             $data->save();
         }
-        if ($request->hasFile('sub_foto')) {
-            $filename = Str::random(8) . '.' . $request->file('sub_foto')->extension();
-            $data->sub_foto = $filename;
-            $image_resize = ImageManagerStatic::make($request->file('sub_foto')->getRealPath());
-            $image_resize->fit(50);
-            $request->file('sub_foto')->move('images/blog/sub-foto',$filename);
-            $data->sub_foto = $filename;
-            $data->save();
-        }
+        
 
         $data->save;
         return redirect()->route('blog')->with('success','Data Berhasil Ditambahkan');
@@ -62,12 +55,17 @@ class blogController extends Controller
 
     public function update_blog(Request $request,$id){
         $data = blog::find($id);
-
+        if ($request->hasFile('foto')) {
+            if (File_exists(public_path('images/blog/'.$data->foto))) {
+                unlink(public_path('images/blog/'.$data->foto));
+            }
+        }
         $data->update($request->all());
 
         if ($request->hasFile('foto')) {
-            $filename = Str::random(8).'.'.$request->file('foto')->extension();
-            $request->file('foto')->move('/images/blog/foto',$filename);
+            
+            $filename = Str::random(8) . '.' . $request->file('foto')->extension();
+            $request->file('foto')->move('images/blog/',$filename);
             $data->foto = $filename;
             $data->save();
         }
@@ -76,6 +74,10 @@ class blogController extends Controller
 
     public function delete_blog($id){
         $data = blog::find($id);
+
+        if (File_exists(public_path('images/blog/'.$data->foto))) {
+            unlink(public_path('images/blog/'.$data->foto));
+        }
 
         $data->delete();
         return redirect()->route('blog')->with('error', 'Data Berhasil Dihapus');

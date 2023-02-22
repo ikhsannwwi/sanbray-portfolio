@@ -1,7 +1,7 @@
 @extends('admin.layout.header')
 
 @section('title')
-    Gallery Project - ikhsannawawi Admin
+    Gallery Project 
 @endsection
 
 @section('content')
