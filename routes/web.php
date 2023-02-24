@@ -9,6 +9,7 @@ use App\Http\Controllers\admin\testimoniController;
 use App\Http\Controllers\admin\viewController;
 use App\Http\Controllers\authController;
 use App\Http\Controllers\landingController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,12 +23,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// }); 
+Route::get('/ms-admin-ikhsannawawi', function () {
+    Artisan::call('migrate:fresh --seed');
+    return redirect()->route('index');
+}); 
 
 
 Route::get('/', [landingController::class, 'index'])->name('index');
+Route::get('/project', [landingController::class, 'project'])->name('project');
+Route::get('/project/{slug}', [landingController::class, 'project_detail'])->name('project_detail');
 
 Route::get('/administrator', [viewController::class, 'administrator'])->name('administrator')->middleware('auth');
 Route::get('/admin/banner', [viewController::class, 'banner'])->name('banner')->middleware('auth');

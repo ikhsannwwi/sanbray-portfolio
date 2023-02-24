@@ -83,6 +83,8 @@
 							<li><a href="http://ikhsannawawi.epizy.com" target="_blank"><span class="fa fa-chevron-right mr-2"></span>Mochammad Ikhsan Nawawi</a></li>
 							<li><a href="http://desasmea.epizy.com" target="_blank"><span class="fa fa-chevron-right mr-2"></span>DesaSmea</a></li>
 							<li><a href="http://lowongankerja.epizy.com" target="_blank"><span class="fa fa-chevron-right mr-2"></span>Lowongan Kerja</a></li>
+							<li><a href="http://sanapp.epizy.com" target="_blank"><span class="fa fa-chevron-right mr-2"></span>SanApp</a></li>
+							<li><a href="http://sanstream.epizy.com" target="_blank"><span class="fa fa-chevron-right mr-2"></span>SanStream</a></li>
 						</ul>
 					</div>
 				</div>

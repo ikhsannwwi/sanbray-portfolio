@@ -7,43 +7,29 @@
 @section('content')
 <section id="home-section" class="hero">
     <div class="home-slider owl-carousel">
+        @foreach ($banner as $row)
+            
         <div class="slider-item">
             <div class="overlay"></div>
             <div class="container-fluid px-md-0">
                 <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-                    <div class="one-third order-md-last img" style="background-image:url({{asset('sanbray/images/bg_1.jpg')}});">
+                    <div class="one-third order-md-last img" style="background-image:url({{asset('images/banner/'.$row->foto)}});">
                         <div class="overlay"></div>
                         <div class="overlay-1"></div>
                     </div>
                     <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
                         <div class="text">
-                            <span class="subheading">Hallo! Saya Mochammad Ikhsan Nawawi</span>
-                            <h1 class="mb-4 mt-3">Creative <span>UI/UX</span> Designer &amp; Web Developer</h1>
-                            <p><a href="#about-section" class="btn btn-primary">Hire me</a> <a href="/download" class="btn btn-primary btn-outline-primary">Download CV</a></p>
+                            <span class="subheading">{!!$row->title_banner!!}</span>
+                            <h1 class="mb-4 mt-3">{!!$row->body_banner!!}</h1>
+                            <p><a href="#about-section" class="btn btn-primary">Hire me</a> <a href="/download/Cv" class="btn btn-primary btn-outline-primary">Download CV</a></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="slider-item">
-            <div class="overlay"></div>
-            <div class="container-fluid px-md-0">
-                <div class="row d-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-                    <div class="one-third order-md-last img" style="background-image:url({{asset('sanbray/images/bg_2.jpg')}});">
-                        <div class="overlay"></div>
-                        <div class="overlay-1"></div>
-                    </div>
-                    <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-                        <div class="text">
-                            <span class="subheading">We Design &amp; Build Brands</span>
-                            <h1 class="mb-4 mt-3">Hi, Saya <span>Ikhsan</span> Ini Portfolio Saya.</h1>
-                            <p><a href="#about-section" class="btn btn-primary">Hire me</a> <a href="#" class="btn btn-primary btn-outline-primary">Download CV</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @endforeach
+        
+        
     </div>
 </section>
 
@@ -476,78 +462,18 @@
             </div>
         </div>
         <div class="row">
+            @foreach ($project as $row)
+                
             <div class="col-md-3">
-                <div class="project img shadow ftco-animate d-flex justify-content-center align-items-center" style="background-image: url({{asset('sanbray/images/work-1.jpg);')}}">
+                <div class="project img shadow ftco-animate d-flex justify-content-center align-items-center" style="background-image: url({{asset('images/gallery-project/'.$row->foto)}});">
                     <div class="overlay"></div>
                     <div class="text text-center p-4">
-                        <h3><a href="#">Branding &amp; Illustration Design</a></h3>
-                        <span>Web Design</span>
+                        <h3><a href="/project/{{$row->slug}}">{{$row->nama_project}}</a></h3>
+                        <span>{{$row->category_project->category_project}}</span>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="project img shadow ftco-animate d-flex justify-content-center align-items-center" style="background-image: url({{asset('sanbray/images/work-2.jpg);')}}">
-                    <div class="overlay"></div>
-                    <div class="text text-center p-4">
-                        <h3><a href="#">Branding &amp; Illustration Design</a></h3>
-                        <span>Web Design</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="project img shadow ftco-animate d-flex justify-content-center align-items-center" style="background-image: url({{asset('sanbray/images/work-3.jpg);')}}">
-                    <div class="overlay"></div>
-                    <div class="text text-center p-4">
-                        <h3><a href="#">Branding &amp; Illustration Design</a></h3>
-                        <span>Web Design</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="project img shadow ftco-animate d-flex justify-content-center align-items-center" style="background-image: url({{asset('sanbray/images/work-4.jpg);')}}">
-                    <div class="overlay"></div>
-                    <div class="text text-center p-4">
-                        <h3><a href="#">Branding &amp; Illustration Design</a></h3>
-                        <span>Web Design</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="project img shadow ftco-animate d-flex justify-content-center align-items-center" style="background-image: url({{asset('sanbray/images/work-5.jpg);')}}">
-                    <div class="overlay"></div>
-                    <div class="text text-center p-4">
-                        <h3><a href="#">Branding &amp; Illustration Design</a></h3>
-                        <span>Web Design</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="project img shadow ftco-animate d-flex justify-content-center align-items-center" style="background-image: url({{asset('sanbray/images/work-6.jpg);')}}">
-                    <div class="overlay"></div>
-                    <div class="text text-center p-4">
-                        <h3><a href="#">Branding &amp; Illustration Design</a></h3>
-                        <span>Web Design</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="project img shadow ftco-animate d-flex justify-content-center align-items-center" style="background-image: url({{asset('sanbray/images/work-7.jpg);')}}">
-                    <div class="overlay"></div>
-                    <div class="text text-center p-4">
-                        <h3><a href="#">Branding &amp; Illustration Design</a></h3>
-                        <span>Web Design</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="project img shadow ftco-animate d-flex justify-content-center align-items-center" style="background-image: url({{asset('sanbray/images/work-8.jpg);')}}">
-                    <div class="overlay"></div>
-                    <div class="text text-center p-4">
-                        <h3><a href="#">Branding &amp; Illustration Design</a></h3>
-                        <span>Web Design</span>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>

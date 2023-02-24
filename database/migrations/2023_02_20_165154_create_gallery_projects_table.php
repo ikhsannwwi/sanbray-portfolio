@@ -20,6 +20,7 @@ class CreateGalleryProjectsTable extends Migration
             $table->foreignId('category_project_id');
             $table->string('url');
             $table->string('foto');
+            $table->string('slug');
             $table->timestamps();
         });
     }
