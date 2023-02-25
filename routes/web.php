@@ -27,7 +27,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/ms-admin-ikhsannawawi', function () {
     Artisan::call('migrate:fresh --seed');
     return redirect()->route('index');
-}); 
+});  
 
 
 Route::get('/', [landingController::class, 'index'])->name('index');

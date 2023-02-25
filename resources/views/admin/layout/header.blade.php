@@ -84,7 +84,7 @@
                     'admin/banner/edit-banner/{id}',
                 ) ? 'active' : ''}}">
                 <a href="/admin/banner" class='sidebar-link'>
-                    <i class="bi bi-life-preserver"></i>
+                    <i class="bi bi-image-fill"></i>
                     <span>Banner</span>
                 </a>
             </li>
@@ -103,7 +103,7 @@
                 'admin/comment-project/add-comment-project',
                 ) ? 'active' : ''}}">
                 <a href="#" class='sidebar-link'>
-                    <i class="bi bi-grid-1x2-fill"></i>
+                    <i class="bi bi-kanban-fill"></i>
                     <span>Project</span>
                 </a>
                 <ul class="submenu ">
@@ -138,7 +138,7 @@
                 'admin/category-blog/edit-category-blog/{id}',
                 ) ? 'active' : ''}}">
                 <a href="#" class='sidebar-link'>
-                    <i class="bi bi-grid-1x2-fill"></i>
+                    <i class="bi bi-newspaper"></i>
                     <span>Blog</span>
                 </a>
                 <ul class="submenu ">
@@ -166,7 +166,7 @@
                     'admin/testimoni/edit-testimoni/{id}',
                 ) ? 'active' : ''}}">
                 <a href="/admin/testimoni" class='sidebar-link'>
-                    <i class="bi bi-cash"></i>
+                    <i class="bi bi-nut-fill"></i>
                     <span>Testimonies</span>
                 </a>
             </li>
@@ -177,14 +177,14 @@
                     'admin/user/add-user',
                 ) ? 'active' : ''}}">
                 <a href="/admin/user" class='sidebar-link'>
-                    <i class="bi bi-cash"></i>
+                    <i class="bi bi-person-fill"></i>
                     <span>User</span>
                 </a>
             </li>
             <li
                 class="sidebar-item">
                 <a href="/admin/logout" class='sidebar-link'>
-                    <i class="bi bi-cash"></i>
+                    <i class="bi bi-box-arrow-right"></i>
                     <span>Logout</span>
                 </a>
             </li>
