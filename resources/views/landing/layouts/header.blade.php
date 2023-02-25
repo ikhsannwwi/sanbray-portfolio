@@ -38,6 +38,37 @@
 
 			<div class="collapse navbar-collapse" id="ftco-nav">
 				<ul class="navbar-nav nav ml-auto">
+					@php
+						if (request()->is('project')) {
+							# code...
+							foreach ($nav as $row){
+								$slug = $row->slug;
+							}
+						}elseif (request()->is('/')) {
+							foreach ($nav as $row){
+								$slug = $row->slug;
+							}
+						}else{
+						$slug = $data->slug;
+						}
+					@endphp
+					@if (request()->is('project/'.$slug))
+					<li class="nav-item"><a href="/#home-section" class="nav-link"><span>Home</span></a></li>
+					<li class="nav-item"><a href="/#about-section" class="nav-link"><span>About</span></a></li>
+					<li class="nav-item"><a href="/#skills-section" class="nav-link"><span>Skills</span></a></li>
+					<li class="nav-item"><a href="/#services-section" class="nav-link"><span>Services</span></a></li>
+					<li class="nav-item"><a href="/project" class="nav-link"><span>Projects</span></a></li>
+					<li class="nav-item"><a href="/#blog-section" class="nav-link"><span>Blog</span></a></li>
+					<li class="nav-item"><a href="/#contact-section" class="nav-link"><span>Contact</span></a></li>
+					@elseif(request()->is('project'))
+					<li class="nav-item"><a href="/#home-section" class="nav-link"><span>Home</span></a></li>
+					<li class="nav-item"><a href="/#about-section" class="nav-link"><span>About</span></a></li>
+					<li class="nav-item"><a href="/#skills-section" class="nav-link"><span>Skills</span></a></li>
+					<li class="nav-item"><a href="/#services-section" class="nav-link"><span>Services</span></a></li>
+					<li class="nav-item"><a href="/#projects-section" class="nav-link"><span>Projects</span></a></li>
+					<li class="nav-item"><a href="/#blog-section" class="nav-link"><span>Blog</span></a></li>
+					<li class="nav-item"><a href="/#contact-section" class="nav-link"><span>Contact</span></a></li>
+					@else
 					<li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
 					<li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
 					<li class="nav-item"><a href="#skills-section" class="nav-link"><span>Skills</span></a></li>
@@ -45,6 +76,7 @@
 					<li class="nav-item"><a href="#projects-section" class="nav-link"><span>Projects</span></a></li>
 					<li class="nav-item"><a href="#blog-section" class="nav-link"><span>Blog</span></a></li>
 					<li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+					@endif
 				</ul>
 			</div>
 		</div>

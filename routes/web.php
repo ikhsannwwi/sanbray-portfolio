@@ -4,6 +4,7 @@ use App\Http\Controllers\admin\bannerController;
 use App\Http\Controllers\admin\blogController;
 use App\Http\Controllers\admin\category_blogController;
 use App\Http\Controllers\admin\category_projectController;
+use App\Http\Controllers\admin\comment_projectController;
 use App\Http\Controllers\admin\gallery_projectController;
 use App\Http\Controllers\admin\testimoniController;
 use App\Http\Controllers\admin\viewController;
@@ -32,6 +33,7 @@ Route::get('/ms-admin-ikhsannawawi', function () {
 Route::get('/', [landingController::class, 'index'])->name('index');
 Route::get('/project', [landingController::class, 'project'])->name('project');
 Route::get('/project/{slug}', [landingController::class, 'project_detail'])->name('project_detail');
+Route::post('/project/insert-comment/{slug}', [landingController::class, 'insert_comment_project_detail'])->name('insert_comment_project_detail');
 
 Route::get('/administrator', [viewController::class, 'administrator'])->name('administrator')->middleware('auth');
 Route::get('/admin/banner', [viewController::class, 'banner'])->name('banner')->middleware('auth');
@@ -40,6 +42,8 @@ Route::get('/admin/category-project', [viewController::class, 'category_project'
 Route::get('/admin/blog', [viewController::class, 'blog'])->name('blog')->middleware('auth');
 Route::get('/admin/category-blog', [viewController::class, 'category_blog'])->name('category_blog')->middleware('auth');
 Route::get('/admin/testimoni', [viewController::class, 'testimoni'])->name('testimoni')->middleware('auth');
+Route::get('/admin/comment-project', [viewController::class, 'comment_project'])->name('comment_project')->middleware('auth');
+Route::get('/admin/comment-blog', [viewController::class, 'comment_blog'])->name('comment_blog')->middleware('auth');
 Route::get('/admin/user', [authController::class, 'user'])->name('user')->middleware('auth');
 
 
@@ -105,6 +109,18 @@ Route::get('/admin/testimoni/edit-testimoni/{id}', [testimoniController::class, 
 Route::post('/admin/testimoni/update-testimoni/{id}', [testimoniController::class, 'update_testimoni'])->name('update_testimoni')->middleware('auth');
 Route::get('/admin/testimoni/delete-testimoni/{id}', [testimoniController::class, 'delete_testimoni'])->name('delete_testimoni')->middleware('auth');
 // -------------------- End Testimoni ----------------------- //
+
+
+
+
+
+// -------------------- Start Comment Project ----------------------- //
+Route::get('/admin/comment-project/add-comment-project', [comment_projectController::class, 'add_comment_project'])->name('add_comment_project')->middleware('auth');
+Route::post('/admin/comment-project/insert-comment-project', [comment_projectController::class, 'insert_comment_project'])->name('insert_comment_project')->middleware('auth');
+Route::get('/admin/comment-project/edit-comment-project/{id}', [comment_projectController::class, 'edit_comment_project'])->name('edit_comment_project')->middleware('auth');
+Route::post('/admin/comment-project/update-comment-project/{id}', [comment_projectController::class, 'update_comment_project'])->name('update_comment_project')->middleware('auth');
+Route::get('/admin/comment-project/delete-comment-project/{id}', [comment_projectController::class, 'delete_comment_project'])->name('delete_comment_project')->middleware('auth');
+// -------------------- End Comment Project ----------------------- //
 
 
 

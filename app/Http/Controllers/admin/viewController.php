@@ -7,6 +7,7 @@ use App\Models\banner;
 use App\Models\blog;
 use App\Models\category_blog;
 use App\Models\category_project;
+use App\Models\comment_project;
 use App\Models\gallery_project;
 use App\Models\testimoni;
 use Illuminate\Http\Request;
@@ -45,5 +46,11 @@ class viewController extends Controller
         $data = testimoni::orderBy('created_at', 'DESC')->get();
 
         return view('admin.data.testimoni',compact('data'));
+    }
+    
+    public function comment_project(){
+        $data = comment_project::orderBy('created_at', 'DESC')->get();
+
+        return view('admin.data.comment-project',compact('data'));
     }
 }

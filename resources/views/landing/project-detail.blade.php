@@ -1,7 +1,7 @@
 @extends('landing.layouts.header')
 
 @section('title')
-    Home
+    {{$data->nama_project}}
 @endsection
 
 @section('content')
@@ -48,43 +48,26 @@
             </div>
             <div class="card">
                     <div class="header">
-                        <h2>Comments 3</h2>
+                        @php
+                            $count = $data->comment_project->count();
+                        @endphp
+                        <h2>Comments {{$count}}</h2>
                     </div>
                     <div class="body">
                         <ul class="comment-reply list-unstyled">
+                            @foreach ($data->comment_project as $row)
+                                    
                             <li class="row clearfix">
                                 <div class="icon-box col-md-2 col-4"><img class="img-fluid img-thumbnail" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Awesome Image"></div>
                                 <div class="text-box col-md-10 col-8 p-l-0 p-r0">
-                                    <h5 class="m-b-0">Gigi Hadid </h5>
-                                    <p>Why are there so many tutorials on how to decouple WordPress? how fast and easy it is to get it running (and keep it running!) and its massive ecosystem. </p>
+                                    <h5 class="m-b-0">{{$row->nama}} </h5>
+                                    <p>{{$row->comment}}</p>
                                     <ul class="list-inline">
-                                        <li><a href="javascript:void(0);">Mar 09 2018</a></li>
-                                        <li><a href="javascript:void(0);">Reply</a></li>
+                                        <li><a href="javascript:void(0);">{{\Carbon\Carbon::parse($row->created_at)->format('F d, Y')}}</a></li>
                                     </ul>
                                 </div>
                             </li>
-                            <li class="row clearfix">
-                                <div class="icon-box col-md-2 col-4"><img class="img-fluid img-thumbnail" src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="Awesome Image"></div>
-                                <div class="text-box col-md-10 col-8 p-l-0 p-r0">
-                                    <h5 class="m-b-0">Christian Louboutin</h5>
-                                    <p>Great tutorial but few issues with it? If i try open post i get following errors. Please can you help me?</p>
-                                    <ul class="list-inline">
-                                        <li><a href="javascript:void(0);">Mar 12 2018</a></li>
-                                        <li><a href="javascript:void(0);">Reply</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="row clearfix">
-                                <div class="icon-box col-md-2 col-4"><img class="img-fluid img-thumbnail" src="https://bootdey.com/img/Content/avatar/avatar4.png" alt="Awesome Image"></div>
-                                <div class="text-box col-md-10 col-8 p-l-0 p-r0">
-                                    <h5 class="m-b-0">Kendall Jenner</h5>
-                                    <p>Very nice and informative article. In all the years I've done small and side-projects as a freelancer, I've ran into a few problems here and there.</p>
-                                    <ul class="list-inline">
-                                        <li><a href="javascript:void(0);">Mar 20 2018</a></li>
-                                        <li><a href="javascript:void(0);">Reply</a></li>
-                                    </ul>
-                                </div>
-                            </li>
+                            @endforeach
                         </ul>                                        
                     </div>
                 </div>
@@ -94,20 +77,33 @@
                     </div>
                     <div class="body">
                         <div class="comment-form">
-                            <form class="row clearfix">
+                            <form class="row clearfix" action="/project/insert-comment/{{$data->slug}}" method="post" enctype="multipart/form-data">
+                                @csrf
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Your Name">
+                                        <input type="text" name="nama" class="form-control @error('nama') is-invalid @enderror" placeholder="Masukan Nama">
+                                        <input type="int" name="project_id" value="{{$data->id}}" class="form-control d-none" >
+                                        @error('nama')
+                                            <span class="invalid-feedback d-block">{{$message}}</span>
+                                        @enderror 
                                     </div>
+                                    
+
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Email Address">
+                                        <input type="text" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="Masukan Email Address">
+                                        @error('email')
+                                            <span class="invalid-feedback d-block">{{$message}}</span>
+                                        @enderror 
                                     </div>
                                 </div>
                                 <div class="col-sm-12">
                                     <div class="form-group">
-                                        <textarea rows="4" class="form-control no-resize" placeholder="Please type what you want..."></textarea>
+                                        <textarea rows="4" name="comment" class="form-control no-resize @error('comment') is-invalid @enderror" placeholder="Please type what you want..."></textarea>
+                                        @error('comment')
+                                            <span class="invalid-feedback d-block">{{$message}}</span>
+                                        @enderror 
                                     </div>
                                     <button type="submit" class="btn btn-block btn-primary">SUBMIT</button>
                                 </div>                                

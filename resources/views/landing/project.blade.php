@@ -1,7 +1,7 @@
 @extends('landing.layouts.header')
 
 @section('title')
-    Home
+    Project
 @endsection
 
 @section('content')
@@ -24,8 +24,7 @@
                     </div>
                     <ul class="stats">
                         <li><a href="javascript:void(0);">{{$row->category_project->category_project}}</a></li>
-                        <li><a href="javascript:void(0);" class="fa fa-heart">28</a></li>
-                        <li><a href="javascript:void(0);" class="fa fa-comment">128</a></li>
+                        <li><a href="javascript:void(0);" class="fa fa-comment">{{$row->comment_project->count()}}</a></li>
                     </ul>
                 </div>
             </div>

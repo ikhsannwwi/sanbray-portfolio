@@ -459,6 +459,7 @@
                 <span class="subheading">Accomplishments</span>
                 <h2 class="mb-4">Our Projects</h2>
                 <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+                <a href="/project" class="btn btn-secondary">See More</a>
             </div>
         </div>
         <div class="row">

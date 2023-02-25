@@ -95,11 +95,12 @@
                 class="sidebar-item  has-sub {{request()->is(
                 'admin/gallery-project',
                 'admin/gallery-project/add-gallery-project',
-                'admin/gallery-project/edit-gallery-project/{id}',
 
                 'admin/category-project',
                 'admin/category-project/add-category-project',
-                'admin/category-project/edit-category-project/{id}',
+                
+                'admin/comment-project',
+                'admin/comment-project/add-comment-project',
                 ) ? 'active' : ''}}">
                 <a href="#" class='sidebar-link'>
                     <i class="bi bi-grid-1x2-fill"></i>
@@ -117,6 +118,11 @@
                     'admin/category-project/edit-category-project/{id}',
                     ) ? 'active' : ''}}">
                         <a href="/admin/category-project">Category Project</a>
+                    </li>
+                    <li class="submenu-item {{request()->is('admin/comment-project',
+                    'admin/comment-project/add-comment-project',
+                    ) ? 'active' : ''}}">
+                        <a href="/admin/comment-project">Comment Project</a>
                     </li>
                 </ul>
             </li>
