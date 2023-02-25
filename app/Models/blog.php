@@ -12,8 +12,11 @@ class blog extends Model
 
     protected $guarded = [];
 
+    public function comment_blog(){
+        return $this->hasMany(comment_blog::class,'blog_id');
+    }
     public function category_blog(){
-        return $this->belongsTo(category_blog::class, 'category_blog_id','id');
+        return $this->belongsTo(category_blog::class,'category_blog_id','id');
     }
     
     public function slugConfigs(): array

@@ -7,6 +7,7 @@ use App\Models\banner;
 use App\Models\blog;
 use App\Models\category_blog;
 use App\Models\category_project;
+use App\Models\comment_blog;
 use App\Models\comment_project;
 use App\Models\gallery_project;
 use App\Models\testimoni;
@@ -52,5 +53,12 @@ class viewController extends Controller
         $data = comment_project::orderBy('created_at', 'DESC')->get();
 
         return view('admin.data.comment-project',compact('data'));
+    }
+    
+    
+    public function comment_blog(){
+        $data = comment_blog::orderBy('created_at', 'DESC')->get();
+
+        return view('admin.data.comment-blog',compact('data'));
     }
 }

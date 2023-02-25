@@ -25,6 +25,7 @@
                         <tr>
                             <th>Id</th>
                             <th>Category Project</th>
+                            <th>Slug</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -32,6 +33,7 @@
                         <tr>
                             <td><a class="text-primary" href="/admin/category-project/edit-category-project/{{$row->id}}">{{$row->id}}</a></td>
                             <td>{{$row->category_project}}</td>
+                            <td>{{$row->slug}}</td>
                         </tr>
                         @endforeach
                     </tbody>

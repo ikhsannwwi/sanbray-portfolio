@@ -1,7 +1,7 @@
 @extends('admin.layout.header')
 
 @section('title')
-    Category Blog 
+    Comment Blog 
 @endsection
 
 @section('content')
@@ -11,10 +11,10 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col-11">
-                        Data Category Blog
+                        Data Comment Blog
                     </div>
                     <div class="col-1">
-                        <a href="/admin/category-blog/add-category-blog"><i class="bi bi-cloud-plus-fill fs-4"></i></a>
+                        <a href="/admin/comment-blog/add-comment-blog"><i class="bi bi-cloud-plus-fill fs-4"></i></a>
                     </div>
                 </div>
                 
@@ -23,17 +23,21 @@
                 <table class="table" id="table1">
                     <thead>
                         <tr>
-                            <th>Id</th>
-                            <th>Category Blog</th>
-                            <th>Slug</th>
+                            <th>No</th>
+                            <th>Nama</th>
+                            <th>Email</th>
+                            <th>Comment</th>
+                            <th>Blog</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($data as $row)
                         <tr>
-                            <td><a class="text-primary" href="/admin/category-blog/edit-category-blog/{{$row->id}}">{{$row->id}}</a></td>
-                            <td>{{$row->category_blog}}</td>
-                            <td>{{$row->slug}}</td>
+                            <td><a class="text-primary" href="/admin/comment-blog/edit-comment-blog/{{$row->id}}">{{$row->id}}</a></td>
+                            <td>{{$row->nama}}</td>
+                            <td>{{$row->email}}</td>
+                            <td>{{$row->comment}}</td>
+                            <td>{{$row->blog->title_blog}}</td>
                         </tr>
                         @endforeach
                     </tbody>

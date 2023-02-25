@@ -35,7 +35,7 @@
 				</div>
 				<!-- Modal body with image -->
 				<div class="modal-body">
-					<img width="750px" src="{{asset('images/gallery-project/'.$data->foto)}}" />
+					<img width="100%" src="{{asset('images/gallery-project/'.$data->foto)}}" />
 				</div>
 			</div>
 		</div>
@@ -120,16 +120,9 @@
                 </div>
                 <div class="body widget">
                     <ul class="list-unstyled categories-clouds m-b-0">
-                        <li><a href="javascript:void(0);">eCommerce</a></li>
-                        <li><a href="javascript:void(0);">Microsoft Technologies</a></li>
-                        <li><a href="javascript:void(0);">Creative UX</a></li>
-                        <li><a href="javascript:void(0);">Wordpress</a></li>
-                        <li><a href="javascript:void(0);">Angular JS</a></li>
-                        <li><a href="javascript:void(0);">Enterprise Mobility</a></li>
-                        <li><a href="javascript:void(0);">Website Design</a></li>
-                        <li><a href="javascript:void(0);">HTML5</a></li>
-                        <li><a href="javascript:void(0);">Infographics</a></li>
-                        <li><a href="javascript:void(0);">Wordpress Development</a></li>
+                        @foreach ($data_category as $row)
+                        <li><a href="/project/category/{{$row->slug}}">{{$row->category_project}}</a></li>
+                        @endforeach
                     </ul>
                 </div>
             </div>

@@ -5,6 +5,7 @@ use App\Http\Controllers\admin\blogController;
 use App\Http\Controllers\admin\category_blogController;
 use App\Http\Controllers\admin\category_projectController;
 use App\Http\Controllers\admin\comment_projectController;
+use App\Http\Controllers\admin\comment_blogController;
 use App\Http\Controllers\admin\gallery_projectController;
 use App\Http\Controllers\admin\testimoniController;
 use App\Http\Controllers\admin\viewController;
@@ -31,9 +32,20 @@ Route::get('/ms-admin-ikhsannawawi', function () {
 
 
 Route::get('/', [landingController::class, 'index'])->name('index');
+
+// -------------------- Start Blog Landing ----------------------- //
+Route::get('/blog', [landingController::class, 'blog_index'])->name('blog_index');
+Route::get('/blog/{slug}', [landingController::class, 'blog_detail'])->name('blog_detail');
+Route::get('/blog/category/{slug}', [landingController::class, 'blog_category'])->name('blog_category');
+Route::post('/blog/insert-comment/{slug}', [landingController::class, 'insert_comment_blog_detail'])->name('insert_comment_blog_detail');
+// -------------------- End Blog Landing ----------------------- //
+
+// -------------------- Start Project Landing ----------------------- //
 Route::get('/project', [landingController::class, 'project'])->name('project');
 Route::get('/project/{slug}', [landingController::class, 'project_detail'])->name('project_detail');
+Route::get('/project/category/{slug}', [landingController::class, 'project_category'])->name('project_category');
 Route::post('/project/insert-comment/{slug}', [landingController::class, 'insert_comment_project_detail'])->name('insert_comment_project_detail');
+// -------------------- End Project Landing ----------------------- //
 
 Route::get('/administrator', [viewController::class, 'administrator'])->name('administrator')->middleware('auth');
 Route::get('/admin/banner', [viewController::class, 'banner'])->name('banner')->middleware('auth');
@@ -121,6 +133,20 @@ Route::get('/admin/comment-project/edit-comment-project/{id}', [comment_projectC
 Route::post('/admin/comment-project/update-comment-project/{id}', [comment_projectController::class, 'update_comment_project'])->name('update_comment_project')->middleware('auth');
 Route::get('/admin/comment-project/delete-comment-project/{id}', [comment_projectController::class, 'delete_comment_project'])->name('delete_comment_project')->middleware('auth');
 // -------------------- End Comment Project ----------------------- //
+
+
+
+
+
+// -------------------- Start Comment Blog ----------------------- //
+Route::get('/admin/comment-blog/add-comment-blog', [comment_blogController::class, 'add_comment_blog'])->name('add_comment_blog')->middleware('auth');
+Route::post('/admin/comment-blog/insert-comment-blog', [comment_blogController::class, 'insert_comment_blog'])->name('insert_comment_blog')->middleware('auth');
+Route::get('/admin/comment-blog/edit-comment-blog/{id}', [comment_blogController::class, 'edit_comment_blog'])->name('edit_comment_blog')->middleware('auth');
+Route::post('/admin/comment-blog/update-comment-blog/{id}', [comment_blogController::class, 'update_comment_blog'])->name('update_comment_blog')->middleware('auth');
+Route::get('/admin/comment-blog/delete-comment-blog/{id}', [comment_blogController::class, 'delete_comment_blog'])->name('delete_comment_blog')->middleware('auth');
+// -------------------- End Comment Blog ----------------------- //
+
+
 
 
 

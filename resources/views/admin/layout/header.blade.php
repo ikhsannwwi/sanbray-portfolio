@@ -131,11 +131,9 @@
                 class="sidebar-item  has-sub {{request()->is(
                 'admin/blog',
                 'admin/blog/add-blog',
-                'admin/blog/edit-blog/{id}',
 
                 'admin/category-blog',
                 'admin/category-blog/add-category-blog',
-                'admin/category-blog/edit-category-blog/{id}',
                 ) ? 'active' : ''}}">
                 <a href="#" class='sidebar-link'>
                     <i class="bi bi-newspaper"></i>
@@ -144,15 +142,18 @@
                 <ul class="submenu ">
                     <li class="submenu-item {{request()->is('admin/blog',
                     'admin/blog/add-blog',
-                    'admin/blog/edit-blog/{id}',
                     ) ? 'active' : ''}}">
                         <a href="/admin/blog">Blog</a>
                     </li>
                     <li class="submenu-item {{request()->is('admin/category-blog',
                     'admin/category-blog/add-category-blog',
-                    'admin/category-blog/edit-category-blog/{id}',
                     ) ? 'active' : ''}}">
                         <a href="/admin/category-blog">Category Blog</a>
+                    </li>
+                    <li class="submenu-item {{request()->is('admin/comment-blog',
+                    'admin/comment-blog/add-comment-blog',
+                    ) ? 'active' : ''}}">
+                        <a href="/admin/comment-blog">Comment Blog</a>
                     </li>
                 </ul>
             </li>

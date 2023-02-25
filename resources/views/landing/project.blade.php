@@ -32,32 +32,19 @@
 
             
                                     
-            <ul class="pagination pagination-primary">
-                <li class="page-item"><a class="page-link" href="javascript:void(0);">Previous</a></li>
-                <li class="page-item active"><a class="page-link" href="javascript:void(0);">1</a></li>
-                <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
-                <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
-                <li class="page-item"><a class="page-link" href="javascript:void(0);">Next</a></li>
-            </ul>                
+                           
         </div>
         <div class="col-lg-4 col-md-12 right-box">
             
             <div class="card">
                 <div class="header">
-                    <h2>Categories Clouds</h2>
+                    <h2>Categories Project</h2>
                 </div>
                 <div class="body widget">
                     <ul class="list-unstyled categories-clouds m-b-0">
-                        <li><a href="javascript:void(0);">eCommerce</a></li>
-                        <li><a href="javascript:void(0);">Microsoft Technologies</a></li>
-                        <li><a href="javascript:void(0);">Creative UX</a></li>
-                        <li><a href="javascript:void(0);">Wordpress</a></li>
-                        <li><a href="javascript:void(0);">Angular JS</a></li>
-                        <li><a href="javascript:void(0);">Enterprise Mobility</a></li>
-                        <li><a href="javascript:void(0);">Website Design</a></li>
-                        <li><a href="javascript:void(0);">HTML5</a></li>
-                        <li><a href="javascript:void(0);">Infographics</a></li>
-                        <li><a href="javascript:void(0);">Wordpress Development</a></li>
+                        @foreach ($data_category as $row)
+                        <li><a href="/project/category/{{$row->slug}}">{{$row->category_project}}</a></li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
