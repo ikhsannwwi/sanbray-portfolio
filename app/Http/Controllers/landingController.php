@@ -17,11 +17,13 @@ class landingController extends Controller
         $banner = banner::orderBy('created_at','DESC')->limit(2)->get();
 
         $project = gallery_project::inRandomOrder()->limit(8)->get();
+        $blog = blog::inRandomOrder()->limit(3)->get();
         $nav = gallery_project::all();
         
         return view('landing.main',compact(
             'banner',
             'project',
+            'blog',
             'nav',
         ));
     }
@@ -90,9 +92,11 @@ class landingController extends Controller
     
     
     public function blog_detail($slug){
-        $data = blog::where('slug',$slug)->with('comment_blog')->first();
+        $data = blog::where('slug',$slug)->with('comment_blog')->with('category_blog')->firstOrFail();
         $comment = blog::with('comment_blog')->get();
         // dd($comment);
+        $data_category_with_blog = category_blog::with('blog')->get();
+        $recent_blog = blog::inRandomOrder()->limit(3)->get();
         $data_category = category_blog::all();
 
 
@@ -102,6 +106,8 @@ class landingController extends Controller
             'nav',
             'comment',
             'data_category',
+            'data_category_with_blog',
+            'recent_blog',
         ));
     }
 
@@ -125,27 +131,34 @@ class landingController extends Controller
 
         $data_category = category_blog::all();
 
+        $recent_blog = blog::inRandomOrder()->limit(3)->get();
+
         $nav = blog::all();
         
         return view('landing.blog',compact(
             'data',
             'nav',
             'data_category',
+            'recent_blog',
         ));
     }
     
     public function blog_category($slug){
-        $data = blog::with('category_blog')->get();
+        $data = category_blog::where('slug',$slug)->with('blog')->firstOrFail();
 
         // dd($data);
         
         $data_category = category_blog::all();
+
+        $recent_blog = blog::inRandomOrder()->limit(3)->get();
+
         
         $nav = category_blog::all();
-        return view('landing.blog',compact(
+        return view('landing.blog-category',compact(
             'data',
             'nav',
             'data_category',
+            'recent_blog',
         ));
     }
 }

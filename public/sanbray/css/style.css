@@ -9818,15 +9818,9 @@ textarea.form-control {
     -webkit-transform: scale(1.01)
 }
 
-/* .single_post .img-post:hover img {
-    -webkit-transform: scale(1.02);
-    -ms-transform: scale(1.02);
-    transform: scale(1.02);
-    opacity: .7;
-    filter: gray;
-    -webkit-filter: grayscale(1);
-    -webkit-transition: all .8s ease-in-out
-} */
+.single_post .img-post button:hover {
+    opacity: 0.5;
+}
 
 .single_post .img-post:hover .social_share {
     display: block
@@ -9865,6 +9859,9 @@ textarea.form-control {
 .single_post .footer .stats li a {
     color: #777
 }
+.single_post .footer .stats li a:hover {
+    opacity:0.5;
+}
 
 .single_post .footer .stats li:first-child {
     border-left: 0;
@@ -9881,13 +9878,11 @@ textarea.form-control {
     color: #242424;
     text-decoration: none
 }
-
-.single_post p {
-    font-size: 16px;
-    line-height: 26px;
-    font-weight: 300;
-    margin: 0
+.single_post h3 a:hover {
+    opacity:0.5;
 }
+
+
 
 .single_post .blockquote p {
     margin-top: 0 !important
@@ -9909,6 +9904,9 @@ textarea.form-control {
     color: #959595;
     text-decoration: none;
     font-size: 12px
+}
+.single_post .meta li a:hover {
+    opacity: 0.5;
 }
 
 .single_post .meta li a i {
@@ -9944,6 +9942,10 @@ textarea.form-control {
     border-right: 1px solid #e4eaec
 }
 
+.single_post2 .content .actions_sidebar a:hover {
+    opacity:0.5;
+}
+
 .single_post2 .content .title {
     font-weight: 100
 }
@@ -9963,6 +9965,11 @@ textarea.form-control {
     padding: 6px 10px;
     border-radius: 3px
 }
+.right-box .categories-clouds li a:hover {
+  /* color: #545b62; */
+  opacity: 0.5;
+}
+
 
 .right-box .instagram-plugin {
     overflow: hidden
@@ -9999,7 +10006,13 @@ textarea.form-control {
 }
 
 .comment-reply .list-inline li a {
-    font-size: 13px
+    font-size: 13px;
+}
+.comment-reply .list-inline li a:hover {
+    opacity:0.5;
+}
+.comment-form button:hover{
+  opacity:0.5;
 }
 
 @media (max-width: 640px) {

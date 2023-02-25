@@ -63,7 +63,17 @@
                                     <h5 class="m-b-0">{{$row->nama}} </h5>
                                     <p>{{$row->comment}}</p>
                                     <ul class="list-inline">
-                                        <li><a href="javascript:void(0);">{{\Carbon\Carbon::parse($row->created_at)->format('F d, Y')}}</a></li>
+                                        @php
+                                            $hour = \Carbon\Carbon::parse($row->created_at)->format('H') + 7;
+                                            if ($hour >= 24) {
+                                                $day = \Carbon\Carbon::parse($row->created_at)->format('d') + 1;
+                                            }else {
+                                                $day = \Carbon\Carbon::parse($row->created_at)->format('d');
+                                            }
+
+                                            $h = \Carbon\Carbon::parse($hour)->format('H');
+                                        @endphp
+                                        <li><a href="javascript:void(0);">{{\Carbon\Carbon::parse($row->created_at)->format('F '.$day.', Y - '.$h.':i A')}}</a></li>
                                     </ul>
                                 </div>
                             </li>

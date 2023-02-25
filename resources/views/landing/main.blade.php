@@ -580,60 +580,29 @@
                 <span class="subheading">Blog</span>
                 <h2 class="mb-4">Our Blog</h2>
                 <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+                <a href="/blog" class="btn btn-secondary">See More</a>
             </div>
         </div>
         <div class="row d-flex">
+            @foreach ($blog as $row)
             <div class="col-md-4 d-flex ftco-animate">
+                    
                 <div class="blog-entry justify-content-end">
-                    <a href="single.html" class="block-20" style="background-image: url('{{asset('sanbray/images/image_1.jpg')}}');">
+                    <a href="/blog/{{$row->slug}}" class="block-20" style="background-image: url('{{asset('images/blog/'.$row->foto)}}');">
                     </a>
                     <div class="text mt-3 float-right d-block">
                         <div class="d-flex align-items-center mb-3 meta">
                             <p class="mb-0">
-                                <span class="mr-2">July 03, 2020</span>
-                                <a href="#" class="mr-2">Admin</a>
-                                <a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
+                                <span class="mr-2">{{\Carbon\Carbon::parse($row->tanggal)->format('F d, Y')}}</span>
                             </p>
                         </div>
-                        <h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a></h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                        <h3 class="heading"><a href="/blog/{{$row->slug}}">{{$row->title_blog}}</a></h3>
+                        <p>{{Str::limit($row->body_blog,150)}}</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 d-flex ftco-animate">
-                <div class="blog-entry justify-content-end">
-                    <a href="single.html" class="block-20" style="background-image: url('{{asset('sanbray/images/image_2.jpg')}}');">
-                    </a>
-                    <div class="text mt-3 float-right d-block">
-                        <div class="d-flex align-items-center mb-3 meta">
-                            <p class="mb-0">
-                                <span class="mr-2">July 03, 2020</span>
-                                <a href="#" class="mr-2">Admin</a>
-                                <a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
-                            </p>
-                        </div>
-                        <h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a></h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 d-flex ftco-animate">
-                <div class="blog-entry">
-                    <a href="single.html" class="block-20" style="background-image: url('{{asset('sanbray/images/image_3.jpg')}}');">
-                    </a>
-                    <div class="text mt-3 float-right d-block">
-                        <div class="d-flex align-items-center mb-3 meta">
-                            <p class="mb-0">
-                                <span class="mr-2">July 03, 2020</span>
-                                <a href="#" class="mr-2">Admin</a>
-                                <a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
-                            </p>
-                        </div>
-                        <h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a></h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                    </div>
-                </div>
-            </div>
+            @endforeach
+            
         </div>
     </div>
 </section>
