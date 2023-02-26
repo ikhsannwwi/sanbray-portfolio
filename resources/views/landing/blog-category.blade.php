@@ -1,39 +1,40 @@
 @extends('landing.layouts.header')
 
 @section('title')
-    Blog
+    {{Str::limit($data->category_blog,10)}}
 @endsection
 
 @section('content')
 <div class="container mt-5">
     <div class="row clearfix">
-        <div class="col-lg-8 col-md-12 left-box">
-            @foreach ($data->blog as $row)
-                
-            <div class="card single_post">
-                <div class="body">
-                    <div class="img-post">
-                        <img class="d-block img-fluid" src="{{asset('images/blog/'.$row->foto)}}" alt="{{$row->foto}}">
-                    </div>
-                    <h3><a href="/blog/{{$row->slug}}">{{$row->title_blog}}</a></h3>
-                    <p>{{Str::limit($row->body_blog,200)}}</p>
-                </div>
-                <div class="footer">
-                    <div class="actions">
-                        <a href="/blog/{{$row->slug}}" class="btn btn-outline-secondary">Details</a>
-                    </div>
-                    <ul class="stats">
-                        <li><a href="javascript:void(0);">{{$row->category_blog->category_blog}}</a></li>
-                        <li><a href="javascript:void(0);" class="fa fa-comment">{{$row->comment_blog->count()}}</a></li>
-                    </ul>
-                </div>
-            </div>
-            @endforeach
-
-            
-                                    
-                           
-        </div>
+      
+      <div class="col-lg-8 col-md-12 left-box">
+        @if ($data->blog->count() == 0)
+        <p class="mt-5">Data null</p>
+        @else
+          @foreach ($data->blog as $row)
+              
+          <div class="card single_post">
+              <div class="body">
+                  <div class="img-post">
+                      <img class="d-block img-fluid" src="{{asset('images/blog/'.$row->foto)}}" alt="{{$row->foto}}">
+                  </div>
+                  <h3><a href="/blog/{{$row->slug}}">{{$row->title_blog}}</a></h3>
+                  <p>{{Str::limit($row->body_blog,200)}}</p>
+              </div>
+              <div class="footer">
+                  <div class="actions">
+                      <a href="/blog/{{$row->slug}}" class="btn btn-outline-secondary">Details</a>
+                  </div>
+                  <ul class="stats">
+                      <li><a href="javascript:void(0);">{{$row->category_blog->category_blog}}</a></li>
+                      <li><a href="javascript:void(0);" class="fa fa-comment">{{$row->comment_blog->count()}}</a></li>
+                  </ul>
+              </div>
+          </div>
+          @endforeach
+          @endif
+      </div>
         <div class="col-lg-4 sidebar ftco-animate mt-3">
             {{-- <div class="sidebar-box">
               <form action="#" class="search-form">

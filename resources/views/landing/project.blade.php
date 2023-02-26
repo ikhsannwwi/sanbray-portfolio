@@ -23,8 +23,8 @@
                         <a href="/project/{{$row->slug}}" class="btn btn-outline-secondary">Details</a>
                     </div>
                     <ul class="stats">
-                        <li><a href="javascript:void(0);">{{$row->category_project->category_project}}</a></li>
-                        <li><a href="javascript:void(0);" class="fa fa-comment">{{$row->comment_project->count()}}</a></li>
+                        <li><a href="/project/category/{{$row->category_project->slug}}">{{$row->category_project->category_project}}</a></li>
+                        <li><a href="/project/{{$row->slug}}#comment-project" class="fa fa-comment">{{$row->comment_project->count()}}</a></li>
                     </ul>
                 </div>
             </div>
@@ -34,77 +34,53 @@
                                     
                            
         </div>
-        <div class="col-lg-4 col-md-12 right-box">
+        <div class="col-lg-4 sidebar ftco-animate mt-3">
+            {{-- <div class="sidebar-box">
+              <form action="#" class="search-form">
+                <div class="form-group">
+                  <span class="icon icon-search"></span>
+                  <input type="text" class="form-control" placeholder="Type a keyword and hit enter">
+                </div>
+              </form>
+            </div> --}}
+            <div class="sidebar-box ftco-animate">
+             <h3 class="heading-sidebar">Categories</h3>
+             <ul class="categories">
+              @foreach ($data_category as $row)
+              <li><a href="/project/category/{{$row->slug}}">{{$row->category_project}}<span>({{$row->gallery_project->count()}})</span></a></li>
+              @endforeach
+            </ul>
+          </div>
+    
+          <div class="sidebar-box ftco-animate">
+            <h3 class="heading-sidebar">Recent project</h3>
+            @foreach ($recent_project as $row)
+                
+            <div class="block-21 mb-4 d-flex">
+              <a class="blog-img mr-4" style="background-image: url({{asset('images/gallery-project/'.$row->foto)}});"></a>
+              <div class="text">
+                <h3 class="heading"><a href="/project/{{$row->slug}}">{{$row->nama_project}}</a></h3>
+                <div class="meta">
+                    <div><a href="/project/{{$row->slug}}"><span class="icon-calendar"></span> {{\Carbon\Carbon::parse($row->created_at)->format('F d, Y')}}</a></div>
+                  </div>
+              </div>
+          </div>
+          @endforeach
             
-            <div class="card">
-                <div class="header">
-                    <h2>Categories Project</h2>
-                </div>
-                <div class="body widget">
-                    <ul class="list-unstyled categories-clouds m-b-0">
-                        @foreach ($data_category as $row)
-                        <li><a href="/project/category/{{$row->slug}}">{{$row->category_project}}</a></li>
-                        @endforeach
-                    </ul>
-                </div>
+          <div class="sidebar-box ftco-animate">
+            <h3 class="heading-sidebar">Tag Cloud</h3>
+            <div class="tagcloud">
+              @foreach ($data_category as $row)
+              <a href="/project/category/{{$row->slug}}" class="tag-cloud-link">{{$row->category_project}}</a>
+              @endforeach
             </div>
-            <div class="card">
-                <div class="header">
-                    <h2>Popular Posts</h2>                        
-                </div>
-                <div class="body widget popular-post">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="single_post">
-                                <p class="m-b-0">Apple Introduces Search Ads Basic</p>
-                                <span>jun 22, 2018</span>
-                                <div class="img-post">
-                                    <img src="https://www.bootdey.com/image/280x280/FFB6C1/000000" alt="Awesome Image">                                        
-                                </div>                                            
-                            </div>
-                            <div class="single_post">
-                                <p class="m-b-0">new rules, more cars, more races</p>
-                                <span>jun 8, 2018</span>
-                                <div class="img-post">
-                                    <img src="https://www.bootdey.com/image/280x280/FFB6C1/000000" alt="Awesome Image">                                            
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="header">
-                    <h2>Instagram Post</h2>
-                </div>
-                <div class="body widget">
-                    <ul class="list-unstyled instagram-plugin m-b-0">
-                        <li><a href="javascript:void(0);"><img src="https://www.bootdey.com/image/80x80/FFB6C1/000000" alt="image description"></a></li>
-                        <li><a href="javascript:void(0);"><img src="https://www.bootdey.com/image/80x80/FFB6C1/000000" alt="image description"></a></li>
-                        <li><a href="javascript:void(0);"><img src="https://www.bootdey.com/image/80x80/FFB6C1/000000" alt="image description"></a></li>
-                        <li><a href="javascript:void(0);"><img src="https://www.bootdey.com/image/80x80/FFB6C1/000000" alt="image description"></a></li>
-                        <li><a href="javascript:void(0);"><img src="https://www.bootdey.com/image/80x80/FFB6C1/000000" alt="image description"></a></li>
-                        <li><a href="javascript:void(0);"><img src="https://www.bootdey.com/image/80x80/FFB6C1/000000" alt="image description"></a></li>
-                        <li><a href="javascript:void(0);"><img src="https://www.bootdey.com/image/80x80/FFB6C1/000000" alt="image description"></a></li>
-                        <li><a href="javascript:void(0);"><img src="https://www.bootdey.com/image/80x80/FFB6C1/000000" alt="image description"></a></li>
-                        <li><a href="javascript:void(0);"><img src="https://www.bootdey.com/image/80x80/FFB6C1/000000" alt="image description"></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="card">
-                <div class="header">
-                    <h2>Email Newsletter <small>Get our products/news earlier than others, let’s get in touch.</small></h2>
-                </div>
-                <div class="body widget newsletter">                        
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Enter Email">
-                        <div class="input-group-append">
-                            <span class="input-group-text"><i class="icon-paper-plane"></i></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
+    
+          
         </div>
+        </div>
+    </div>
+
     </div>
 
 </div>

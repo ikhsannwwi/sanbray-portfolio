@@ -31,7 +31,7 @@
           </div> --}}
   
   
-          <div class="pt-5 mt-5">
+          <div class="pt-5 mt-5" id="comment-blog">
             <h4 class="mb-5 font-weight-bold">{{$data->comment_blog->count()}} Comments</h4>
             <ul class="comment-list">
                 @foreach($data->comment_blog as $row)
@@ -49,7 +49,7 @@
                                 $day = \Carbon\Carbon::parse($row->created_at)->format('d');
                             }
 
-                            $h = \Carbon\Carbon::parse($hour)->format('H');
+                            $h = \Carbon\Carbon::parse($hour)->format('h');
                         @endphp
                         <div class="meta">{{\Carbon\Carbon::parse($row->created_at)->format('F '.$day.', Y - '.$h.':i A')}}</div>
                         <p>{{$row->comment}}</p>
@@ -60,7 +60,7 @@
                 </ul>
             <!-- END comment-list -->
             
-            <div class="comment-form-wrap pt-5">
+            <div class="comment-form-wrap pt-5" >
               <h3 class="mb-5">Leave a comment</h3>
               <form action="/blog/insert-comment/{{$data->slug}}" method="post" class="p-5 bg-light">
                 @csrf

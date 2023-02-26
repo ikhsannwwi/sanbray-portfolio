@@ -1,7 +1,7 @@
 @extends('admin.layout.header')
 
 @section('title')
-    Testimoni 
+    Cv 
 @endsection
 
 @section('content')
@@ -11,34 +11,27 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col-11">
-                        Data Testimoni
+                        Data Cv
                     </div>
                     <div class="col-1">
-                        <a href="/admin/testimoni/add-testimoni"><i class="bi bi-cloud-plus-fill fs-4"></i></a>
+                        <a href="/admin/cv/add-cv"><i class="bi bi-cloud-plus-fill fs-4"></i></a>
                     </div>
                 </div>
                 
             </div>
-            <div class="card-body ">
-                <table class="table " id="table1">
+            <div class="card-body">
+                <table class="table" id="table1">
                     <thead>
                         <tr>
-                            <th>No</th>
-                            <th>Nama</th>
-                            <th>Message</th>
-                            <th>Foto</th>
+                            <th>Id</th>
+                            <th>Cv</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @php
-                            $no = 1;
-                        @endphp
                         @foreach ($data as $row)
                         <tr>
-                            <td><a class="text-primary" @if(auth()->user())href="/admin/testimoni/edit-testimoni/{{$row->id}}"@endif>{{$no++}}</a></td>
-                            <td>{{$row->nama_client}}</td>
-                            <td>{{$row->message}}</td>
-                            <td><img width="100px" src="{{asset('images/testimoni/'.$row->foto)}}" alt="{{$row->foto}}"></td>
+                            <td><a class="text-primary" href="/admin/cv/edit-cv/{{$row->id}}">{{$row->id}}</a></td>
+                            <td><img width="100%" src="{{asset('images/cv/'.$row->cv)}}" alt="{{$row->cv}}"></td>
                         </tr>
                         @endforeach
                     </tbody>

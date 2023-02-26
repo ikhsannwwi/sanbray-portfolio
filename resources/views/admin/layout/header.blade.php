@@ -64,7 +64,7 @@
     <div class="sidebar-menu">
         <ul class="menu">
             <li class="sidebar-title">Menu</li>
-            
+            @if (auth()->user())
             <li
                 class="sidebar-item {{request()->is('administrator') ? 'active' : ''}} ">
                 <a href="/administrator" class='sidebar-link'>
@@ -159,12 +159,11 @@
             </li>
 
             
-            
+            @endif
             <li
                 class="sidebar-item  {{request()->is(
                     'admin/testimoni',
                     'admin/testimoni/add-testimoni',
-                    'admin/testimoni/edit-testimoni/{id}',
                 ) ? 'active' : ''}}">
                 <a href="/admin/testimoni" class='sidebar-link'>
                     <i class="bi bi-nut-fill"></i>
@@ -172,6 +171,17 @@
                 </a>
             </li>
 
+            @if (auth()->user())
+            <li
+                class="sidebar-item  {{request()->is(
+                    'admin/cv',
+                    'admin/cv/add-cv',
+                ) ? 'active' : ''}}">
+                <a href="/admin/cv" class='sidebar-link'>
+                    <i class="bi bi-person-fill"></i>
+                    <span>Cv</span>
+                </a>
+            </li>
             <li
                 class="sidebar-item  {{request()->is(
                     'admin/user',
@@ -189,6 +199,7 @@
                     <span>Logout</span>
                 </a>
             </li>
+            @endif
             
             
         </ul>

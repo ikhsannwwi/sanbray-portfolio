@@ -21,7 +21,7 @@
                         <div class="text">
                             <span class="subheading">{!!$row->title_banner!!}</span>
                             <h1 class="mb-4 mt-3">{!!$row->body_banner!!}</h1>
-                            <p><a href="#about-section" class="btn btn-primary">Hire me</a> <a href="/download/Cv" class="btn btn-primary btn-outline-primary">Download CV</a></p>
+                            <p><a href="#about-section" class="btn btn-primary">Hire me</a> <a href="/download-cv" class="btn btn-primary btn-outline-primary">Download CV</a></p>
                         </div>
                     </div>
                 </div>
@@ -42,7 +42,7 @@
                         <span class="flaticon-suitcase"></span>
                     </div>
                     <div class="text">
-                        <strong class="number" data-number="750">0</strong>
+                        <strong class="number" data-number="{{$nav->count()}}">0</strong>
                         <span>Project Complete</span>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                         <span class="flaticon-loyalty"></span>
                     </div>
                     <div class="text">
-                        <strong class="number" data-number="568">0</strong>
+                        <strong class="number" data-number="{{$testimoni_count->count()}}">0</strong>
                         <span>Happy Clients</span>
                     </div>
                 </div>
@@ -64,8 +64,8 @@
                         <span class="flaticon-coffee"></span>
                     </div>
                     <div class="text">
-                        <strong class="number" data-number="478">0</strong>
-                        <span>Cups of coffee</span>
+                        <strong class="number" data-number="{{$blog_count->count()}}">0</strong>
+                        <span>Blogs</span>
                     </div>
                 </div>
             </div>
@@ -75,8 +75,8 @@
                         <span class="flaticon-calendar"></span>
                     </div>
                     <div class="text">
-                        <strong class="number" data-number="780">0</strong>
-                        <span>Years experienced</span>
+                        <strong class="number" data-number="{{$comment_blog_count->count()}}">0</strong>
+                        <span>Comment Blogs</span>
                     </div>
                 </div>
             </div>
@@ -491,81 +491,23 @@
         <div class="row ftco-animate">
             <div class="col-md-12">
                 <div class="carousel-testimony owl-carousel">
+                    @foreach ($testimoni as $row)
                     <div class="item">
                         <div class="testimony-wrap py-4">
                             <div class="text">
                                 <span class="fa fa-quote-left"></span>
-                                <p class="mb-4 pl-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                                <p class="mb-4 pl-5">{{$row->message}}</p>
                                 <div class="d-flex align-items-center">
-                                    <div class="user-img" style="background-image: url({{asset('sanbray/images/person_1.jpg')}})"></div>
+                                    <div class="user-img" style="background-image: url({{asset('images/testimoni/'.$row->foto)}})"></div>
                                     <div class="pl-3">
-                                        <p class="name">Roger Scott</p>
-                                        <span class="position">Marketing Manager</span>
+                                        <p class="name">{{$row->nama_client}}</p>
+                                        {{-- <span class="position">Marketing Manager</span> --}}
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="testimony-wrap py-4">
-                            <div class="text">
-                                <span class="fa fa-quote-left"></span>
-                                <p class="mb-4 pl-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                <div class="d-flex align-items-center">
-                                    <div class="user-img" style="background-image: url({{asset('sanbray/images/person_2.jpg')}})"></div>
-                                    <div class="pl-3">
-                                        <p class="name">Roger Scott</p>
-                                        <span class="position">Marketing Manager</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimony-wrap py-4">
-                            <div class="text">
-                                <span class="fa fa-quote-left"></span>
-                                <p class="mb-4 pl-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                <div class="d-flex align-items-center">
-                                    <div class="user-img" style="background-image: url({{asset('sanbray/images/person_3.jpg')}})"></div>
-                                    <div class="pl-3">
-                                        <p class="name">Roger Scott</p>
-                                        <span class="position">Marketing Manager</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimony-wrap py-4">
-                            <div class="text">
-                                <span class="fa fa-quote-left"></span>
-                                <p class="mb-4 pl-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                <div class="d-flex align-items-center">
-                                    <div class="user-img" style="background-image: url({{asset('sanbray/images/person_1.jpg')}})"></div>
-                                    <div class="pl-3">
-                                        <p class="name">Roger Scott</p>
-                                        <span class="position">Marketing Manager</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimony-wrap py-4">
-                            <div class="text">
-                                <span class="fa fa-quote-left"></span>
-                                <p class="mb-4 pl-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                <div class="d-flex align-items-center">
-                                    <div class="user-img" style="background-image: url({{asset('sanbray/images/person_2.jpg')}})"></div>
-                                    <div class="pl-3">
-                                        <p class="name">Roger Scott</p>
-                                        <span class="position">Marketing Manager</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

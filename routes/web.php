@@ -6,6 +6,7 @@ use App\Http\Controllers\admin\category_blogController;
 use App\Http\Controllers\admin\category_projectController;
 use App\Http\Controllers\admin\comment_projectController;
 use App\Http\Controllers\admin\comment_blogController;
+use App\Http\Controllers\admin\cvController;
 use App\Http\Controllers\admin\gallery_projectController;
 use App\Http\Controllers\admin\testimoniController;
 use App\Http\Controllers\admin\viewController;
@@ -33,6 +34,14 @@ Route::get('/ms-admin-ikhsannawawi', function () {
 
 Route::get('/', [landingController::class, 'index'])->name('index');
 
+
+
+// -------------------- Start Download Cv ----------------------- //
+Route::get('/download-cv', [cvController::class, 'cvDownload'])->name('cvDownload');
+// -------------------- End Download Cv ----------------------- //
+
+
+
 // -------------------- Start Blog Landing ----------------------- //
 Route::get('/blog', [landingController::class, 'blog_index'])->name('blog_index');
 Route::get('/blog/{slug}', [landingController::class, 'blog_detail'])->name('blog_detail');
@@ -53,9 +62,10 @@ Route::get('/admin/gallery-project', [viewController::class, 'gallery_project'])
 Route::get('/admin/category-project', [viewController::class, 'category_project'])->name('category_project')->middleware('auth');
 Route::get('/admin/blog', [viewController::class, 'blog'])->name('blog')->middleware('auth');
 Route::get('/admin/category-blog', [viewController::class, 'category_blog'])->name('category_blog')->middleware('auth');
-Route::get('/admin/testimoni', [viewController::class, 'testimoni'])->name('testimoni')->middleware('auth');
+Route::get('/admin/testimoni', [viewController::class, 'testimoni'])->name('testimoni');
 Route::get('/admin/comment-project', [viewController::class, 'comment_project'])->name('comment_project')->middleware('auth');
 Route::get('/admin/comment-blog', [viewController::class, 'comment_blog'])->name('comment_blog')->middleware('auth');
+Route::get('/admin/cv', [viewController::class, 'cv'])->name('cv')->middleware('auth');
 Route::get('/admin/user', [authController::class, 'user'])->name('user')->middleware('auth');
 
 
@@ -115,8 +125,8 @@ Route::get('/admin/blog/delete-blog/{id}', [blogController::class, 'delete_blog'
 
 
 // -------------------- Start Testimoni ----------------------- //
-Route::get('/admin/testimoni/add-testimoni', [testimoniController::class, 'add_testimoni'])->name('add_testimoni')->middleware('auth');
-Route::post('/admin/testimoni/insert-testimoni', [testimoniController::class, 'insert_testimoni'])->name('insert_testimoni')->middleware('auth');
+Route::get('/admin/testimoni/add-testimoni', [testimoniController::class, 'add_testimoni'])->name('add_testimoni');
+Route::post('/admin/testimoni/insert-testimoni', [testimoniController::class, 'insert_testimoni'])->name('insert_testimoni');
 Route::get('/admin/testimoni/edit-testimoni/{id}', [testimoniController::class, 'edit_testimoni'])->name('edit_testimoni')->middleware('auth');
 Route::post('/admin/testimoni/update-testimoni/{id}', [testimoniController::class, 'update_testimoni'])->name('update_testimoni')->middleware('auth');
 Route::get('/admin/testimoni/delete-testimoni/{id}', [testimoniController::class, 'delete_testimoni'])->name('delete_testimoni')->middleware('auth');
@@ -145,6 +155,18 @@ Route::get('/admin/comment-blog/edit-comment-blog/{id}', [comment_blogController
 Route::post('/admin/comment-blog/update-comment-blog/{id}', [comment_blogController::class, 'update_comment_blog'])->name('update_comment_blog')->middleware('auth');
 Route::get('/admin/comment-blog/delete-comment-blog/{id}', [comment_blogController::class, 'delete_comment_blog'])->name('delete_comment_blog')->middleware('auth');
 // -------------------- End Comment Blog ----------------------- //
+
+
+
+
+
+// -------------------- Start CV ----------------------- //
+Route::get('/admin/cv/add-cv', [cvController::class, 'add_cv'])->name('add_cv')->middleware('auth');
+Route::post('/admin/cv/insert-cv', [cvController::class, 'insert_cv'])->name('insert_cv')->middleware('auth');
+Route::get('/admin/cv/edit-cv/{id}', [cvController::class, 'edit_cv'])->name('edit_cv')->middleware('auth');
+Route::post('/admin/cv/update-cv/{id}', [cvController::class, 'update_cv'])->name('update_cv')->middleware('auth');
+Route::get('/admin/cv/delete-cv/{id}', [cvController::class, 'delete_cv'])->name('delete_cv')->middleware('auth');
+// -------------------- End CV ----------------------- //
 
 
 

@@ -9,6 +9,7 @@ use App\Models\category_blog;
 use App\Models\category_project;
 use App\Models\comment_blog;
 use App\Models\comment_project;
+use App\Models\cv;
 use App\Models\gallery_project;
 use App\Models\testimoni;
 use Illuminate\Http\Request;
@@ -60,5 +61,11 @@ class viewController extends Controller
         $data = comment_blog::orderBy('created_at', 'DESC')->get();
 
         return view('admin.data.comment-blog',compact('data'));
+    }
+
+    public function cv(){
+        $data = cv::all();
+
+        return view('admin.data.cv',compact('data'));
     }
 }

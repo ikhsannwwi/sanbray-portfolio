@@ -9,22 +9,30 @@ use App\Models\category_blog;
 use App\Models\comment_blog;
 use App\Models\comment_project;
 use App\Models\gallery_project;
+use App\Models\testimoni;
 use Illuminate\Http\Request;
 
 class landingController extends Controller
 {
     public function index(){
         $banner = banner::orderBy('created_at','DESC')->limit(2)->get();
-
+        $testimoni = testimoni::inRandomOrder()->get();
         $project = gallery_project::inRandomOrder()->limit(8)->get();
         $blog = blog::inRandomOrder()->limit(3)->get();
         $nav = gallery_project::all();
+        $comment_blog_count = comment_blog::all();
+        $blog_count = blog::all();
+        $testimoni_count = testimoni::all();
         
         return view('landing.main',compact(
             'banner',
             'project',
             'blog',
+            'testimoni',
             'nav',
+            'comment_blog_count',
+            'blog_count',
+            'testimoni_count',
         ));
     }
 
@@ -33,7 +41,7 @@ class landingController extends Controller
         $comment = gallery_project::with('comment_project')->get();
         // dd($comment);
         $data_category = category_project::all();
-
+        $recent_project = gallery_project::inRandomOrder()->limit(3)->get();
 
         $nav = gallery_project::all();
         return view('landing.project-detail',compact(
@@ -41,6 +49,7 @@ class landingController extends Controller
             'nav',
             'comment',
             'data_category',
+            'recent_project',
         ));
     }
 
@@ -65,26 +74,32 @@ class landingController extends Controller
         $data_category = category_project::all();
 
         $nav = gallery_project::all();
+        $recent_project = gallery_project::inRandomOrder()->limit(3)->get();
         
         return view('landing.project',compact(
             'data',
             'nav',
             'data_category',
+            'recent_project',
         ));
     }
     
     public function project_category($slug){
-        $data = gallery_project::with('category_project')->get();
+        $data = category_project::where('slug',$slug)->with('gallery_project')->firstOrFail();
 
         // dd($data);
         
         $data_category = category_project::all();
+
+        $recent_project = gallery_project::inRandomOrder()->limit(3)->get();
+
         
         $nav = category_project::all();
-        return view('landing.project',compact(
+        return view('landing.project-category',compact(
             'data',
             'nav',
             'data_category',
+            'recent_project',
         ));
     }
     
