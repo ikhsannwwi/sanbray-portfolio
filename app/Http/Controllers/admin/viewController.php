@@ -9,6 +9,7 @@ use App\Models\category_blog;
 use App\Models\category_project;
 use App\Models\comment_blog;
 use App\Models\comment_project;
+use App\Models\contact;
 use App\Models\cv;
 use App\Models\gallery_project;
 use App\Models\testimoni;
@@ -67,5 +68,12 @@ class viewController extends Controller
         $data = cv::all();
 
         return view('admin.data.cv',compact('data'));
+    }
+    
+    public function contact_us(){
+        $data_unread = contact::where('read' , '=' , null)->orderBy('created_at','DESC')->get();
+        $data = contact::where('read' , '=' , 1)->orderBy('created_at','DESC')->get();
+
+        return view('admin.data.contact-us',compact('data','data_unread'));
     }
 }

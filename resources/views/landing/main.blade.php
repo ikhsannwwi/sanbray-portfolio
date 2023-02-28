@@ -107,7 +107,7 @@
                                 <li class="d-flex"><span>Tanggal Lahir:</span> <span>Bandung, Juni 21, 2005</span></li>
                                 <li class="d-flex"><span>Alamat:</span> <span>Kp Babakan Kalapa Desa Pataruman Kec Tarogong Kidul Garut Jawabarat</span></li>
                                 <li class="d-flex"><span>Kode Pos:</span> <span>44151</span></li>
-                                <li class="d-flex"><span>Email:</span> <span>ikhsannawawix@gmail.com</span></li>
+                                <li class="d-flex"><span>Email:</span> <span>ikhsanxnawawi@gmail.com</span></li>
                                 <li class="d-flex"><span>Nomor Telepon: </span> <span>+62-877-9888-9924</span></li>
                             </ul>
                         </div>
@@ -161,7 +161,7 @@
                     <h2 class="h5 font-weight-bold text-center mb-4">CSS</h2>
 
                     <!-- Progress bar 1 -->
-                    <div class="progress mx-auto" data-value='95'>
+                    <div class="progress mx-auto" data-value='75'>
                         <span class="progress-left">
                             <span class="progress-bar border-primary"></span>
                         </span>
@@ -169,7 +169,7 @@
                             <span class="progress-bar border-primary"></span>
                         </span>
                         <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-                            <div class="h2 font-weight-bold">95<sup class="small">%</sup></div>
+                            <div class="h2 font-weight-bold">75<sup class="small">%</sup></div>
                         </div>
                     </div>
                     <!-- END -->
@@ -192,7 +192,7 @@
                     <h2 class="h5 font-weight-bold text-center mb-4">HTML</h2>
 
                     <!-- Progress bar 1 -->
-                    <div class="progress mx-auto" data-value='98'>
+                    <div class="progress mx-auto" data-value='85'>
                         <span class="progress-left">
                             <span class="progress-bar border-primary"></span>
                         </span>
@@ -200,7 +200,7 @@
                             <span class="progress-bar border-primary"></span>
                         </span>
                         <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-                            <div class="h2 font-weight-bold">98<sup class="small">%</sup></div>
+                            <div class="h2 font-weight-bold">85<sup class="small">%</sup></div>
                         </div>
                     </div>
                     <!-- END -->
@@ -220,10 +220,10 @@
 
             <div class="col-lg-4 mb-4">
                 <div class="bg-white rounded-lg shadow p-4">
-                    <h2 class="h5 font-weight-bold text-center mb-4">jQuery</h2>
+                    <h2 class="h5 font-weight-bold text-center mb-4">JavaScript</h2>
 
                     <!-- Progress bar 1 -->
-                    <div class="progress mx-auto" data-value='68'>
+                    <div class="progress mx-auto" data-value='30'>
                         <span class="progress-left">
                             <span class="progress-bar border-primary"></span>
                         </span>
@@ -231,7 +231,7 @@
                             <span class="progress-bar border-primary"></span>
                         </span>
                         <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-                            <div class="h2 font-weight-bold">68<sup class="small">%</sup></div>
+                            <div class="h2 font-weight-bold">30<sup class="small">%</sup></div>
                         </div>
                     </div>
                     <!-- END -->
@@ -251,10 +251,10 @@
 
             <div class="col-lg-4 mb-4">
                 <div class="bg-white rounded-lg shadow p-4">
-                    <h2 class="h5 font-weight-bold text-center mb-4">Photoshop</h2>
+                    <h2 class="h5 font-weight-bold text-center mb-4">Laravel</h2>
 
                     <!-- Progress bar 1 -->
-                    <div class="progress mx-auto" data-value='92'>
+                    <div class="progress mx-auto" data-value='90'>
                         <span class="progress-left">
                             <span class="progress-bar border-primary"></span>
                         </span>
@@ -262,7 +262,7 @@
                             <span class="progress-bar border-primary"></span>
                         </span>
                         <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-                            <div class="h2 font-weight-bold">92<sup class="small">%</sup></div>
+                            <div class="h2 font-weight-bold">90<sup class="small">%</sup></div>
                         </div>
                     </div>
                     <!-- END -->
@@ -282,10 +282,10 @@
 
             <div class="col-lg-4 mb-4">
                 <div class="bg-white rounded-lg shadow p-4">
-                    <h2 class="h5 font-weight-bold text-center mb-4">WordPress</h2>
+                    <h2 class="h5 font-weight-bold text-center mb-4">PHP</h2>
 
                     <!-- Progress bar 1 -->
-                    <div class="progress mx-auto" data-value='83'>
+                    <div class="progress mx-auto" data-value='75'>
                         <span class="progress-left">
                             <span class="progress-bar border-primary"></span>
                         </span>
@@ -293,7 +293,7 @@
                             <span class="progress-bar border-primary"></span>
                         </span>
                         <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-                            <div class="h2 font-weight-bold">83<sup class="small">%</sup></div>
+                            <div class="h2 font-weight-bold">75<sup class="small">%</sup></div>
                         </div>
                     </div>
                     <!-- END -->
@@ -313,10 +313,10 @@
 
             <div class="col-lg-4 mb-4">
                 <div class="bg-white rounded-lg shadow p-4">
-                    <h2 class="h5 font-weight-bold text-center mb-4">SEO</h2>
+                    <h2 class="h5 font-weight-bold text-center mb-4">Bootstrap</h2>
 
                     <!-- Progress bar 1 -->
-                    <div class="progress mx-auto" data-value='95'>
+                    <div class="progress mx-auto" data-value='80'>
                         <span class="progress-left">
                             <span class="progress-bar border-primary"></span>
                         </span>
@@ -324,7 +324,7 @@
                             <span class="progress-bar border-primary"></span>
                         </span>
                         <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-                            <div class="h2 font-weight-bold">95<sup class="small">%</sup></div>
+                            <div class="h2 font-weight-bold">80<sup class="small">%</sup></div>
                         </div>
                     </div>
                     <!-- END -->
@@ -442,7 +442,7 @@
                 <div class="w-100 py-4">
                     <h2>Have a project on your mind.</h2>
                     <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly.</p>
-                    <p class="mb-0"><a href="#" class="btn btn-white py-3 px-4">Contact me</a></p>
+                    <p class="mb-0"><a href="#contact-section" class="btn btn-white py-3 px-4">Contact me</a></p>
                 </div>
             </div>
             <div class="col-md-4 col-lg-4 d-flex align-items-end">
@@ -561,26 +561,56 @@
 
         <div class="row block-9">
             <div class="col-md-8">
-                <form action="#" class="bg-light p-4 p-md-5 contact-form">
+                @if(Session::has('success'))
+
+                            <div class="alert alert-success">
+
+                                {{Session::get('success')}}
+
+                            </div>
+
+                        @endif
+                <form action="/contact-us" method="post" class="bg-light p-4 p-md-5 contact-form">
+                    @csrf
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Your Name">
+                                <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" placeholder="Your Name">
+                                @if ($errors->has('name'))
+
+                                            <span class="text-danger">{{ $errors->first('name') }}</span>
+
+                                        @endif
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Your Email">
+                                <input type="text" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="Your Email">
+                                @if ($errors->has('email'))
+
+                                            <span class="text-danger">{{ $errors->first('name') }}</span>
+
+                                        @endif
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Subject">
+                                <input type="text" name="subject" class="form-control @error('subject') is-invalid @enderror" placeholder="Subject">
+                                @if ($errors->has('subject'))
+
+                                            <span class="text-danger">{{ $errors->first('name') }}</span>
+
+                                        @endif
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+                                <textarea name="message" id="" cols="30" rows="7" class="form-control @error('message') is-invalid @enderror" placeholder="Message"></textarea>
+                                @if ($errors->has('message'))
+
+                                            <span class="text-danger">{{ $errors->first('name') }}</span>
+
+                                        @endif
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -616,7 +646,7 @@
                             <span class="fa fa-paper-plane"></span>
                         </div>
                         <div class="text">
-                            <p><span>Email:</span> <a href="mailto:ikhsannawawix@gmail.com">ikhsannawawix@gmail.com</a></p>
+                            <p><span>Email:</span> <a href="mailto:ikhsanxnawawi@gmail.com">ikhsanxnawawi@gmail.com</a></p>
                         </div>
                     </div>
                     <div class="dbox w-100 d-flex">

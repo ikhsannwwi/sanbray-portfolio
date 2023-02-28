@@ -9,6 +9,7 @@ use App\Http\Controllers\admin\comment_blogController;
 use App\Http\Controllers\admin\cvController;
 use App\Http\Controllers\admin\gallery_projectController;
 use App\Http\Controllers\admin\testimoniController;
+use App\Http\Controllers\admin\contactController;
 use App\Http\Controllers\admin\viewController;
 use App\Http\Controllers\authController;
 use App\Http\Controllers\landingController;
@@ -66,7 +67,16 @@ Route::get('/admin/testimoni', [viewController::class, 'testimoni'])->name('test
 Route::get('/admin/comment-project', [viewController::class, 'comment_project'])->name('comment_project')->middleware('auth');
 Route::get('/admin/comment-blog', [viewController::class, 'comment_blog'])->name('comment_blog')->middleware('auth');
 Route::get('/admin/cv', [viewController::class, 'cv'])->name('cv')->middleware('auth');
+Route::get('/admin/contact-us', [viewController::class, 'contact_us'])->name('contact_us')->middleware('auth');
 Route::get('/admin/user', [authController::class, 'user'])->name('user')->middleware('auth');
+
+
+// -------------------- Start Banner ----------------------- //
+Route::post('/contact-us', [contactController::class, 'storeMessage'])->name('storeMessage');
+Route::post('/admin/contact-us/update-read-contact-us/{id}', [contactController::class, 'read'])->name('read')->middleware('auth');
+// -------------------- End Banner ----------------------- //
+
+
 
 
 // -------------------- Start Banner ----------------------- //

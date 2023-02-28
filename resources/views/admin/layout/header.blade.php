@@ -184,6 +184,15 @@
             </li>
             <li
                 class="sidebar-item  {{request()->is(
+                    'admin/contact-us',
+                ) ? 'active' : ''}}">
+                <a href="/admin/contact-us" class='sidebar-link'>
+                    <i class="bi bi-person-fill"></i>
+                    <span>Message</span>
+                </a>
+            </li>
+            <li
+                class="sidebar-item  {{request()->is(
                     'admin/user',
                     'admin/user/add-user',
                 ) ? 'active' : ''}}">
